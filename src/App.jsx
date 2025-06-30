@@ -7,8 +7,8 @@ import NavBar from './componets/NavBar/Navbar';
 
 function App() {
   return (
-    <div style={{backgroundImage: 'url("/main-background.jpg")'}}>
-      <BrowserRouter>
+    <div style={{backgroundImage: `url("${import.meta.env.BASE_URL}main-background.jpg"`}}>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
       <NavBar/>
       <Routes>
         <Route path="/" element={<Home />} />

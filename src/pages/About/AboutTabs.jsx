@@ -37,7 +37,7 @@ function PaperCard({ item }) {
             </div>
             <a
               className="paper-download-link"
-              href={`/papers/${encodeURIComponent(item.file)}`}
+              href={`${import.meta.env.BASE_URL}/papers/${encodeURIComponent(item.file)}`}
               download
             >
               📎 다운로드

@@ -14,7 +14,7 @@ function About(){
     const projectTabs = ["홈", "논문", "수상경력", "자격증"];
 
     useEffect(() => {
-      fetch("/db.json")
+      fetch(`${import.meta.env.BASE_URL}db.json`)
         .then((res) => res.json())
         .then((json) => {
           const sorted = {};
