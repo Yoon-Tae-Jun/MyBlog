@@ -1,0 +1,127 @@
+{
+  "논문": {
+    "0": {
+      "paperName": "C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘",
+      "author": [
+        "이소연",
+        "박지훈",
+        "윤태준",
+        "김대영"
+      ],
+      "conferenceName": "2022 한국인터넷정보학회 춘계학술발표대회",
+      "date": "2022.04.29(금)-30(토)",
+      "file": "[KSII] C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘(최종).pdf"
+    },
+    "1": {
+      "paperName": "투명 페트병 분리를 위한 Hailo-8 기반 경량 객체 검출 시스템",
+      "author": [
+        "윤태준",
+        "정윤희",
+        "이소연",
+        "김대영"
+      ],
+      "conferenceName": "2025 대한전자공학회 하계학술대회",
+      "date": "2025.06.24(화)-27(금)",
+      "file": "투명 페트병 분리를 위한 Hailo-8기반 경량 객체 검출 시스템(submit).pdf"
+    },
+    "2": {
+      "paperName": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스",
+      "author": [
+        "윤태준",
+        "이소연",
+        "박지훈",
+        "김민승",
+        "김대영"
+      ],
+      "conferenceName": "2022 ICT플랫폼학회 추계학술대회",
+      "date": "2022.12.08(목)",
+      "file": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스.pdf"
+    },
+    "3": {
+      "paperName": "YOLOv7 기반 순환 가능한 PET 분류 시스템",
+      "author": [
+        "김민승",
+        "이소연",
+        "배민지",
+        "윤태준",
+        "김대영"
+      ],
+      "conferenceName": "2022 한국정보처리학회 추계학술대회",
+      "date": "2022.11.03(목)-05(토)",
+      "file": "YOLOv7 기반 순환 가능한 PET 분류시스템.pdf"
+    },
+    "4": {
+      "paperName": "Semantic Segmentation 기반 실시간 교통 혼잡 판단 시스템",
+      "author": [
+        "배민지",
+        "윤태준",
+        "이소연",
+        "김대영"
+      ],
+      "conferenceName": "2022년도 한국통신학회 동계종합학술발표회",
+      "date": "2022.02.09(수)-11(금)",
+      "file": "Semantic Segmentation 기반 실시간 교통 혼잡 판단 시스템.pdf"
+    },
+    "5": {
+      "paperName": "의미론적 분할을 이용한 스마트 팩토리 제품 불량 검출 시스템",
+      "author": [
+        "윤태준",
+        "강윤경",
+        "배민지",
+        "이소연",
+        "김대영"
+      ],
+      "conferenceName": "2022년도 한국인터넷정보학회 춘계학술발표대회",
+      "date": "2022.04.29(금)-30(토)",
+      "file": "의미론적 분할을 이용한 스마트 팩토리 제품 불량 검출 시스템.pdf"
+    },
+    "6": {
+      "paperName": "딥러닝 기술을 활용한 얼굴 인식 도어락 시스템",
+      "author": [
+        "강윤경",
+        "윤태준",
+        "이소연",
+        "박지훈",
+        "김대영"
+      ],
+      "conferenceName": "2021년도 한국인터넷정보학회 추계학술발표대회",
+      "date": "2021.10.22(금)-24(일)",
+      "file": "딥러닝 기술을 활용한 얼굴 인식 도어락 시스템.pdf"
+    },
+    "7": {
+      "paperName": "Dataset construction method for network intelligence",
+      "author": [
+        "SoYeon Lee",
+        "Jihoon Park",
+        "Tae-Jun Yoon",
+        "MinJi Bae",
+        "Dae-Young Kim"
+      ],
+      "conferenceName": "The 17th AsiaPacific International Conference on Information Science and Technology (APIC-IST 2022)",
+      "date": "2022.06.19(일)-21(화)",
+      "file": "Proceedings_of_APIC-IST_2022-66-68.pdf"
+    }
+  },
+  "수상경력": {
+    "0": {
+      "contestName": "2022 SCH AI,SW Festival",
+      "awardType": "장려상",
+      "date": "2022.04.29(금)-30(토)"
+    },
+    "1": {
+      "contestName": "자율배송 운행데이터 데이터톤 2021 AI모델개발부분",
+      "awardType": "장려상",
+      "date": "2021.12.18(토)"
+    },
+    "2": {
+      "contestName": "메가시티 실전문제연구단 연합 경진대회",
+      "awardType": "동상",
+      "date": "2022.06.19(일)-21(화)"
+    },
+    "3": {
+      "contestName": "2022  순천향 SW경시대회",
+      "awardType": "장려상",
+      "date": "2022.11.10(목)"
+    }
+  }
+}
