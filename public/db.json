@@ -123,5 +123,23 @@
       "awardType": "장려상",
       "date": "2022.11.10(목)"
     }
+  },
+  "자격증": {
+    "0": {
+      "CertificationName": "비서3급",
+      "date": "2024.11"
+    },
+    "1": {
+      "CertificationName": "워드프로세서",
+      "date": "2024.11"
+    },
+    "2": {
+      "CertificationName": "자동차운전면허(2종보통)",
+      "date": "2022.07"
+    },
+    "3": {
+      "CertificationName": "정보처리기능사",
+      "date": "2021.10"
+    }
   }
 }
