@@ -59,8 +59,7 @@ function ContestCard({ item }){
 function CertificationCard(){
     return(
         <div className="cert-card-content">
-            <strong>{item.certName}</strong> <br />
-            <span>{item.issuedBy}</span> <br />
+            <strong>{item.CertificationName}</strong> <br />
             <span>{item.date}</span>
         </div>
     )
