@@ -56,7 +56,7 @@ function ContestCard({ item }){
     )
 }
 
-function CertificationCard(){
+function CertificationCard({item}){
     return(
         <div className="cert-card-content">
             <strong>{item.CertificationName}</strong> <br />
