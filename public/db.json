@@ -115,26 +115,21 @@
   },
   "수상경력": {
     "0": {
-      "contestName": "테스트 1번",
-      "awardType": "장려상",
-      "date": "222222"
-    },
-    "1": {
       "contestName": "2022 SCH AI,SW Festival",
       "awardType": "장려상",
       "date": "2022.04.29(금)-30(토)"
     },
-    "2": {
+    "1": {
       "contestName": "자율배송 운행데이터 데이터톤 2021 AI모델개발부분",
       "awardType": "장려상",
       "date": "2021.12.18(토)"
     },
-    "3": {
+    "2": {
       "contestName": "메가시티 실전문제연구단 연합 경진대회",
       "awardType": "동상",
       "date": "2022.06.19(일)-21(화)"
     },
-    "4": {
+    "3": {
       "contestName": "2022  순천향 SW경시대회",
       "awardType": "장려상",
       "date": "2022.11.10(목)"
