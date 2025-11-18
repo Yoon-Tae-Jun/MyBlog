@@ -1,18 +1,6 @@
 {
   "논문": {
     "0": {
-      "paperName": "C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘",
-      "author": [
-        "이소연",
-        "박지훈",
-        "윤태준",
-        "김대영"
-      ],
-      "conferenceName": "2022 한국인터넷정보학회 춘계학술발표대회",
-      "date": "2022.04.29(금)-30(토)",
-      "file": "[KSII] C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘(최종).pdf"
-    },
-    "1": {
       "paperName": "투명 페트병 분리를 위한 Hailo-8 기반 경량 객체 검출 시스템",
       "author": [
         "윤태준",
@@ -24,7 +12,7 @@
       "date": "2025.06.24(화)-27(금)",
       "file": "투명 페트병 분리를 위한 Hailo-8기반 경량 객체 검출 시스템(submit).pdf"
     },
-    "2": {
+    "1": {
       "paperName": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스",
       "author": [
         "윤태준",
@@ -36,6 +24,18 @@
       "conferenceName": "2022 ICT플랫폼학회 추계학술대회",
       "date": "2022.12.08(목)",
       "file": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스.pdf"
+    },
+    "2": {
+      "paperName": "C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘",
+      "author": [
+        "이소연",
+        "박지훈",
+        "윤태준",
+        "김대영"
+      ],
+      "conferenceName": "2022 한국인터넷정보학회 춘계학술발표대회",
+      "date": "2022.04.29(금)-30(토)",
+      "file": "[KSII] C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘(최종).pdf"
     },
     "3": {
       "paperName": "YOLOv7 기반 순환 가능한 PET 분류 시스템",
@@ -100,6 +100,17 @@
       "conferenceName": "The 17th AsiaPacific International Conference on Information Science and Technology (APIC-IST 2022)",
       "date": "2022.06.19(일)-21(화)",
       "file": "Proceedings_of_APIC-IST_2022-66-68.pdf"
+    },
+    "8": {
+      "paperName": "Performance Evaluation of Parallel Inference Pipeline for Multi-Model Processing on Edge Devices\n",
+      "author": [
+        "SoYeon Lee",
+        "Tae-Jun Yoon",
+        "Dae-Young Kim"
+      ],
+      "conferenceName": "ML4CS 2025",
+      "date": "2025.12.12(금)-14(일)",
+      "file": "ML4CS_2025_paper_85.pdf"
     }
   },
   "수상경력": {
@@ -131,8 +142,8 @@
   },
   "자격증": {
     "0": {
-      "CertificationName": "비서3급",
-      "date": "2024.11"
+      "CertificationName": "정보처리기능사",
+      "date": "2021.10"
     },
     "1": {
       "CertificationName": "워드프로세서",
@@ -143,8 +154,8 @@
       "date": "2022.07"
     },
     "3": {
-      "CertificationName": "정보처리기능사",
-      "date": "2021.10"
+      "CertificationName": "비서3급",
+      "date": "2024.11"
     }
   }
 }
