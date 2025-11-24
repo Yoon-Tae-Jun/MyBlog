@@ -1,0 +1,144 @@
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #020617;
+}
+
+/* 공통: 별 레이어 기본 스타일 */
+.stars,
+.stars2,
+.stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;     /* 기본 별 크기, 각 레이어에서 다시 조정 */
+  height: 1px;
+  background: transparent;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 별 1 (가장 작고 많은 별) */
+.stars {
+  box-shadow:
+    100px 50px white,
+    300px 80px white,
+    500px 120px white,
+    700px 200px white,
+    900px 150px white,
+    1100px 90px white,
+    200px 300px white,
+    600px 400px white,
+    900px 500px white,
+    1200px 600px white;
+  animation: animStar 12s linear infinite;
+}
+
+/* 별 2 (조금 더 큰 별) */
+.stars2 {
+  width: 2px;
+  height: 2px;
+  box-shadow:
+    150px 120px white,
+    350px 180px white,
+    550px 220px white,
+    800px 350px white,
+    1000px 260px white,
+    1300px 180px white;
+  animation: animStar 16s linear infinite;
+}
+
+/* 별 3 (가장 큰 별) */
+.stars3 {
+  width: 3px;
+  height: 3px;
+  box-shadow:
+    250px 300px white,
+    450px 450px white,
+    700px 500px white,
+    900px 650px white,
+    1000px 700px white;
+  animation: animStar 20s linear infinite;
+}
+
+/* --- Shooting Stars (유성) --- */
+.shooting-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+/* 유성 기본 스타일 */
+.shooting-stars::before,
+.shooting-stars::after {
+  content: "";
+  position: absolute;
+  top: -200px;        /* 화면 위에서 시작 */
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(white, transparent);
+  opacity: 0.8;
+  transform: rotate(45deg); /* 대각선으로 떨어지게 */
+  border-radius: 999px;
+  animation: shooting 3s ease-in-out infinite;
+}
+
+/* 유성 1 (시간 랜덤) */
+.shooting-stars::before {
+  left: 30%;
+  animation-delay: 0s;
+}
+
+/* 유성 2 (늦게 나타남) */
+.shooting-stars::after {
+  left: 70%;
+  animation-delay: 2s;
+}
+
+/* Shooting Star Animation */
+@keyframes shooting {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-600px, 600px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* 핵심: 아래쪽에 똑같은 별 패턴을 한 번 더 복사해 둠 */
+.stars::after,
+.stars2::after,
+.stars3::after {
+  content: "";
+  position: absolute;
+  top: 1000px;         /* 아래쪽에 동일 패턴 하나 더 */
+  width: inherit;
+  height: inherit;
+  box-shadow: inherit; /* 동일한 별 패턴 복붙 */
+}
+
+/* 별이 위로 움직이는데, 1000px만큼만 올렸다가 다시 시작 */
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+}
+
+/* 내용은 항상 별 위에 올라오도록 */
+.app-content {
+  position: relative;
+  z-index: 1;
+}

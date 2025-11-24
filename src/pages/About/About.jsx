@@ -10,8 +10,8 @@ const parseDate = (dateStr) => {
 
 function About(){
     const [data, setData] = useState(null);
-    const [tab, setTab] = useState("홈");
-    const projectTabs = ["홈", "논문", "수상경력", "자격증"];
+    const [tab, setTab] = useState("Home");
+    const projectTabs = ["Home", "논문", "수상경력", "자격증"];
 
     useEffect(() => {
       fetch(`${import.meta.env.BASE_URL}db.json`)

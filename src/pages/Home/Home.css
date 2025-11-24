@@ -1,0 +1,65 @@
+.home-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: calc(100vh - 80px);
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  opacity: 0.95;
+}
+
+/* 타이핑 + 커서 */
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #ffffff;
+
+  /* 1) 타이핑: 3초 동안 42ch까지 찍고 멈춤
+     2) caret: 3초 동안만 깜빡이다가 투명 상태로 고정 */
+  animation: typing 3s steps(40, end) forwards,
+             caret 3s step-end forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 42ch; }  /* 문장 길이에 맞게 조절 */
+}
+
+/* 커서: 타이핑 중엔 보이다가, 끝날 때 투명해진 상태로 멈춤 */
+@keyframes caret {
+  0%, 70% { border-right-color: #ffffff; }      /* 중간까지는 보이고 */
+  70.01%, 100% { border-right-color: transparent; } /* 마지막엔 사라짐 */
+}
+
+/* 타이핑 끝난 뒤 자연스럽게 나타나는 interest 텍스트 */
+.home-interest {
+  margin-top: 0.4rem;
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 1.5rem;
+
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 3.1s; /* 타이핑(3s) 끝나고 조금 쉬고 등장 */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

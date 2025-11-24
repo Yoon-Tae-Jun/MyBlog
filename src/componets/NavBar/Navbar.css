@@ -1,12 +1,32 @@
-.nav-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.nav-container {
+    position: relative;
     width: 100%;
     height: 80px;
+    display: flex;
+    align-items: center;
 }
 
-.navbar-content-wrapper{
+/* 로고 */
+.nav-left-logo {
+    position: absolute;
+    left: 25px;  
+    top: 27%;
+}
+
+.nav-logo-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-logo-text:hover {
+    color: #3ea8ff;
+    transition: 0.2s;
+}
+
+/* 메뉴 */
+.navbar-content-wrapper {
     margin: 0 auto;
     max-width: 1250px;
     width: 100%;
@@ -19,10 +39,56 @@
     gap: 70px;
     margin: 0;
     padding: 0;
-  }
-  
+}
+
 .nav-a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.nav-a:hover {
+    color: #3ea8ff;
+}
+
+.nav-a.active {
+    color: #3ea8ff;
+    font-weight: 600;
+    border-bottom: 2px solid #3ea8ff;
+    padding-bottom: 2px;
+}
+
+/* ========================= */
+/*   화면이 좁아졌을 때 처리  */
+/* ========================= */
+@media (max-width: 1500px) {
+  .nav-container {
+    height: auto;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
   }
+
+  /* 로고를 절대 위치에서 빼고, 위에 놓기 */
+  .nav-left-logo {
+    position: static;
+    transform: none;
+    margin-bottom: 8px;
+    align-self: flex-start;
+    padding-left: 20px;
+  }
+
+  .navbar-content-wrapper {
+    padding: 0 16px;
+  }
+
+  .nav-ul {
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-a {
+    font-size: 14px;
+  }
+}
