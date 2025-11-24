@@ -157,5 +157,25 @@
       "CertificationName": "비서3급",
       "date": "2024.11"
     }
+  },
+  "프로젝트": {
+    "0": {
+      "ProjectName": "PET 분류 시스템",
+      "description": "Edge에서 캔, 플라스틱과 플라스틱의 구성요소를 분리하는 프로젝트",
+      "tag": [
+        "Edge AI",
+        "Object Detection",
+        "Hailo"
+      ]
+    },
+    "1": {
+      "ProjectName": "Bus 프로젝트",
+      "description": "지하철과 학교 셔틀버스 시간표를 연계하여 만든 웹사이트",
+      "tag": [
+        "Web",
+        "Backend",
+        "Cloud"
+      ]
+    }
   }
 }
