@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Projects.css";
 
-const FILTERS = ["All", "Edge AI", "Web", "Other"];
+const FILTERS = ["All", "Edge AI", "MLOps", "Web", "Other"];
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -74,7 +74,17 @@ function Projects() {
             <article key={project.id} className="project-card">
               <div className="project-card-header">
                 <h2 className="project-card-title">{project.title}</h2>
-                <span className="project-status status-in-progress">
+                <span
+                  className={`project-status ${
+                    project.status === "Completed"
+                      ? "status-completed"
+                      : project.status === "In Progress"
+                      ? "status-in-progress"
+                      : project.status === "Experimental"
+                      ? "status-experimental"
+                      : "status-other"
+                  }`}
+                >
                   {project.status}
                 </span>
               </div>
