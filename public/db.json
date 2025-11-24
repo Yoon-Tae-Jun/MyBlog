@@ -166,7 +166,8 @@
         "Edge AI",
         "Object Detection",
         "Hailo"
-      ]
+      ],
+      "status": "Completed"
     },
     "1": {
       "ProjectName": "Bus 프로젝트",
@@ -175,7 +176,8 @@
         "Web",
         "Backend",
         "Cloud"
-      ]
+      ],
+      "status": "Completed"
     }
   }
 }
