@@ -22,6 +22,11 @@ function About(){
           for (const [category, items] of Object.entries(json)) {
             const itemArray = Object.values(items);
   
+            if (category === "프로젝트") {
+              // 정렬 안 하고 그대로 사용
+              sorted[category] = itemArray;
+              continue;
+            }
             // 날짜 기준 내림차순 정렬
             itemArray.sort((a, b) => {
               const dateA = parseDate(a.date);

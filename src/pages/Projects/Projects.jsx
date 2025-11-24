@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Projects.css";
 
-const FILTERS = ["All", "Edge AI", "Computer Vision", "Networking", "ML / NLP", "Web", "Other"];
+const FILTERS = ["All", "Edge AI", "Web", "Other"];
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -21,11 +21,11 @@ function Projects() {
 
           return {
             id,
-            title: item.title || item.description, // title 없으니까 description을 제목처럼 사용
+            title: item.ProjectName || item.description,
             description: item.description,
             tags,
             category: mainTag,
-            status: "In Progress", // 필요하면 JSON에 status 추가해도 됨
+            status: item.status,
           };
         });
 
