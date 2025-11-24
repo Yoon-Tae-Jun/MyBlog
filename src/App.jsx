@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   return (
         <div className="app-root">
-          {/* 반짝이는 밤하늘 배경 */}
+          {/* 배경 */}
           <div className="stars"></div>
           <div className="stars2"></div>
           <div className="stars3"></div>

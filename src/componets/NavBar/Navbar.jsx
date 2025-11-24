@@ -7,8 +7,8 @@ const NavBar = () => {
     const menuItems = [
       { label: "Home", to: "/" },
       { label: "About", to: "/about" },
-      { label: "Blog", to: "/blog" },
       { label: "Project", to: "/projects" },
+      { label: "Blog", to: "https://tae-jun.tistory.com/", external: true },
       { label: "GitHub", to: "https://github.com/Yoon-Tae-Jun", external: true },
     ];
   
