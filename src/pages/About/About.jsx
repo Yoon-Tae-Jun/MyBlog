@@ -22,6 +22,11 @@ function About(){
           for (const [category, items] of Object.entries(json)) {
             const itemArray = Object.values(items);
   
+            if (category === "소개") {
+              sorted["Home"] = itemArray;
+              continue;
+            }
+            
             if (category === "프로젝트") {
               // 정렬 안 하고 그대로 사용
               sorted[category] = itemArray;
