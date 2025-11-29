@@ -209,5 +209,223 @@
       ],
       "status": "Completed"
     }
+  },
+  "소개": {
+    "0": {
+      "id": "2ba6601c-5e93-8023-8166-e16791d271a5",
+      "type": "heading_1",
+      "has_children": false,
+      "heading_1": {
+        "rich_text": [
+          {
+            "plain_text": "About",
+            "href": null,
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            }
+          }
+        ],
+        "color": "default"
+      }
+    },
+    "1": {
+      "id": "2ba6601c-5e93-80ee-bc8a-e2f9e6e79e8d",
+      "type": "column_list",
+      "has_children": true,
+      "children": [
+        {
+          "id": "2ba6601c-5e93-8056-a221-c82626754e4e",
+          "type": "column",
+          "has_children": true,
+          "children": [
+            {
+              "id": "2ba6601c-5e93-80a1-9b3a-d2625713daa2",
+              "type": "image",
+              "has_children": false,
+              "image": {
+                "name": "my_image.jpg",
+                "source_type": "file",
+                "caption": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "2ba6601c-5e93-80f2-bf30-e2bddf88732c",
+          "type": "column",
+          "has_children": true,
+          "children": [
+            {
+              "id": "2ba6601c-5e93-80ce-8c1f-fd17857fbd06",
+              "type": "paragraph",
+              "has_children": false,
+              "paragraph": {
+                "rich_text": [
+                  {
+                    "plain_text": "저는 순천향대학교 컴퓨터소프트웨어공학과에 재학 중이며, 시스템 및 지능형 네트워크 연구실에서 학부 연구생으로 활동하고 있습니다. Edge AI, 컴퓨터 비전, NLP, MLOps와 같은 주제에 관심을 두고 공부하고 있습니다.",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "2ba6601c-5e93-8030-bce2-ec6ae5a2b96c",
+              "type": "paragraph",
+              "has_children": false,
+              "paragraph": {
+                "rich_text": [],
+                "color": "default"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "id": "2ba6601c-5e93-80e4-a900-f54f3eec5830",
+      "type": "heading_1",
+      "has_children": false,
+      "heading_1": {
+        "rich_text": [
+          {
+            "plain_text": "관심분야",
+            "href": null,
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            }
+          }
+        ],
+        "color": "default"
+      }
+    },
+    "3": {
+      "id": "2ba6601c-5e93-80e3-b478-c464bff771d0",
+      "type": "bulleted_list_item",
+      "has_children": false,
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "plain_text": "Edge AI",
+            "href": null,
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            }
+          }
+        ],
+        "color": "default"
+      }
+    },
+    "4": {
+      "id": "2ba6601c-5e93-80f9-a087-e152dabc2036",
+      "type": "bulleted_list_item",
+      "has_children": false,
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "plain_text": "컴퓨터 비전",
+            "href": null,
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            }
+          }
+        ],
+        "color": "default"
+      }
+    },
+    "5": {
+      "id": "2ba6601c-5e93-8037-afbb-ec1139a8fb55",
+      "type": "bulleted_list_item",
+      "has_children": false,
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "plain_text": "NLP",
+            "href": null,
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            }
+          }
+        ],
+        "color": "default"
+      }
+    },
+    "6": {
+      "id": "2ba6601c-5e93-8004-b8ed-c4124c067260",
+      "type": "bulleted_list_item",
+      "has_children": false,
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "plain_text": "MLOps",
+            "href": null,
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            }
+          }
+        ],
+        "color": "default"
+      }
+    },
+    "7": {
+      "id": "2ba6601c-5e93-8089-9b72-fd0aae068d40",
+      "type": "paragraph",
+      "has_children": false,
+      "paragraph": {
+        "rich_text": [
+          {
+            "plain_text": "작성중..",
+            "href": null,
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            }
+          }
+        ],
+        "color": "default"
+      }
+    }
   }
 }
