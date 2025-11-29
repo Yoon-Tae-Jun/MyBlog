@@ -61,7 +61,7 @@
 /* ========================= */
 /*   화면이 좁아졌을 때 처리  */
 /* ========================= */
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .nav-container {
     height: auto;
     padding: 10px 0;
@@ -89,6 +89,18 @@
   }
 
   .nav-a {
-    font-size: 14px;
+    font-size: 20px;
+  }
+
+  .nav-left-logo {
+    position: static;
+    transform: none;
+    margin-bottom: 8px;
+
+    width: 100%;         /* 로고 영역 전체 */
+    display: flex;
+    justify-content: center;  /* 로고 가운데 정렬 */
+
+    padding: 0;          /* 기존 left 패딩 제거 */
   }
 }
