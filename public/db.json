@@ -234,17 +234,17 @@
       }
     },
     "1": {
-      "id": "2ba6601c-5e93-80ee-bc8a-e2f9e6e79e8d",
+      "id": "2bd6601c-5e93-80f8-b45d-d5783ef01b0e",
       "type": "column_list",
       "has_children": true,
       "children": [
         {
-          "id": "2ba6601c-5e93-8056-a221-c82626754e4e",
+          "id": "2bd6601c-5e93-8046-95e2-dbc049713a2e",
           "type": "column",
           "has_children": true,
           "children": [
             {
-              "id": "2ba6601c-5e93-80a1-9b3a-d2625713daa2",
+              "id": "2bd6601c-5e93-807f-8dca-c0e54f0555a3",
               "type": "image",
               "has_children": false,
               "image": {
@@ -256,7 +256,7 @@
           ]
         },
         {
-          "id": "2ba6601c-5e93-80f2-bf30-e2bddf88732c",
+          "id": "2bd6601c-5e93-80f0-be00-c5d5222391d9",
           "type": "column",
           "has_children": true,
           "children": [
@@ -283,7 +283,7 @@
               }
             },
             {
-              "id": "2ba6601c-5e93-8030-bce2-ec6ae5a2b96c",
+              "id": "2bd6601c-5e93-8056-a3d5-dece05df895c",
               "type": "paragraph",
               "has_children": false,
               "paragraph": {
@@ -296,6 +296,15 @@
       ]
     },
     "2": {
+      "id": "2ba6601c-5e93-8030-bce2-ec6ae5a2b96c",
+      "type": "paragraph",
+      "has_children": false,
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    "3": {
       "id": "2ba6601c-5e93-80e4-a900-f54f3eec5830",
       "type": "heading_1",
       "has_children": false,
@@ -317,7 +326,7 @@
         "color": "default"
       }
     },
-    "3": {
+    "4": {
       "id": "2ba6601c-5e93-80e3-b478-c464bff771d0",
       "type": "bulleted_list_item",
       "has_children": false,
@@ -339,7 +348,7 @@
         "color": "default"
       }
     },
-    "4": {
+    "5": {
       "id": "2ba6601c-5e93-80f9-a087-e152dabc2036",
       "type": "bulleted_list_item",
       "has_children": false,
@@ -361,7 +370,7 @@
         "color": "default"
       }
     },
-    "5": {
+    "6": {
       "id": "2ba6601c-5e93-8037-afbb-ec1139a8fb55",
       "type": "bulleted_list_item",
       "has_children": false,
@@ -383,7 +392,7 @@
         "color": "default"
       }
     },
-    "6": {
+    "7": {
       "id": "2ba6601c-5e93-8004-b8ed-c4124c067260",
       "type": "bulleted_list_item",
       "has_children": false,
@@ -405,14 +414,14 @@
         "color": "default"
       }
     },
-    "7": {
+    "8": {
       "id": "2ba6601c-5e93-8089-9b72-fd0aae068d40",
       "type": "paragraph",
       "has_children": false,
       "paragraph": {
         "rich_text": [
           {
-            "plain_text": "작성중..",
+            "plain_text": "작성중…",
             "href": null,
             "annotations": {
               "bold": false,
@@ -429,4 +438,3 @@
     }
   }
 }
-
