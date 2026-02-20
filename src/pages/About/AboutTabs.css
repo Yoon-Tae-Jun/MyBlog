@@ -1,32 +1,32 @@
-.about-container{
-    background-color: #050b23;
-    width: 100%;
-    min-height: calc(100vh - 80px - 270px);
-    padding-top: 1px;
-    color: #e5e7eb;
+.about-container {
+  background-color: #050b23;
+  width: 100%;
+  min-height: calc(100vh - 80px - 270px);
+  padding-top: 1px;
+  color: #e5e7eb;
 }
 
-.about-content-wrapper{
-    margin: 0 auto;
-    max-width: 1250px;
-    width: 100%;
-    padding: 0 20px;
-    margin-top: 1em;
+.about-content-wrapper {
+  margin: 0 auto;
+  max-width: 1250px;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 1em;
 }
 
-.card-container{
-    border: 1px solid rgba(148, 163, 184, 0.5);
-    border-radius: 10px;
+.card-container {
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 10px;
 
-    margin-top: 1em;
-    padding: 1em 10px;
-    
+  margin-top: 1em;
+  padding: 1em 10px;
+
 }
 
-.paper-card-content{
-    display: flex;
-    justify-content:space-between;
-    
+.paper-card-content {
+  display: flex;
+  justify-content: space-between;
+
 }
 
 
@@ -52,7 +52,8 @@
 
 /* 첫 번째 컬럼(보통 이미지 위치) */
 .intro-column:first-child {
-  flex: 0 0 220px;        /* 너비 고정 느낌 */
+  flex: 0 0 220px;
+  /* 너비 고정 느낌 */
   display: flex;
   justify-content: center;
 }
@@ -78,45 +79,55 @@
 
 /* headings */
 .intro-heading {
-    margin: 1rem 0 0.5rem 0;
-    font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 600;
 }
-.intro-h1 { font-size: 2rem; border-bottom: 1px rgb(179, 179, 179) solid;}
-.intro-h2 { font-size: 1.6rem; }
-.intro-h3 { font-size: 1.3rem; }
+
+.intro-h1 {
+  font-size: 2rem;
+  border-bottom: 1px rgb(179, 179, 179) solid;
+}
+
+.intro-h2 {
+  font-size: 1.6rem;
+}
+
+.intro-h3 {
+  font-size: 1.3rem;
+}
 
 /* bullets */
 .intro-bullet {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin: 0;
-    padding-left: 4px;
-  }
-  
-  .intro-bullet-dot {
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding-left: 4px;
+}
+
+.intro-bullet-dot {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
 /* quotes */
 .intro-quote {
-border-left: 4px solid #ccc;
-padding-left: 12px;
-color: #555;
-margin: 12px 0;
-font-style: italic;
+  border-left: 4px solid #ccc;
+  padding-left: 12px;
+  color: #555;
+  margin: 12px 0;
+  font-style: italic;
 }
 
 /* todo */
 .intro-todo {
-display: flex;
-align-items: center;
-gap: 8px;
-margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
 }
 
-  
+
 /* 반응형: 좁은 화면에서는 세로로 쌓기 */
 @media (max-width: 768px) {
   .intro-columns {
