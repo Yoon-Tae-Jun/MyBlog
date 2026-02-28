@@ -1,6 +1,23 @@
 import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
 import AboutTabs from './AboutTabs';
 import SubNavBar from '../../componets/SubNavBar/SubNavBar';
+
+// URL 경로(tabId)와 실제 탭 이름 간의 매핑
+const TAB_MAPPING = {
+  "intro": "자기소개",
+  "paper": "논문",
+  "award": "수상경력",
+  "cert": "자격증"
+};
+const REVERSE_TAB_MAPPING = {
+  "자기소개": "intro",
+  "논문": "paper",
+  "수상경력": "award",
+  "자격증": "cert"
+};
+
+const projectTabs = ["자기소개", "논문", "수상경력", "자격증"];
 
 // 날짜 문자열을 Date 객체로 변환 (YYYY.MM.DD 또는 YYYY.MM 형식)
 const parseDate = (dateStr) => {
@@ -20,9 +37,19 @@ const parseDate = (dateStr) => {
 };
 
 function About() {
+  const { tabId } = useParams();
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
-  const [tab, setTab] = useState("자기소개");
-  const projectTabs = ["자기소개", "논문", "수상경력", "자격증"];
+
+  // URL 파라미터가 유효하지 않으면 기본값 사용
+  const currentTab = TAB_MAPPING[tabId] || "자기소개";
+
+  // 잘못된 경로명 입력 시 intro로 리다이렉트
+  useEffect(() => {
+    if (tabId && !TAB_MAPPING[tabId]) {
+      navigate('/about/intro', { replace: true });
+    }
+  }, [tabId, navigate]);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}db.json`)
@@ -58,11 +85,18 @@ function About() {
       .catch((err) => console.error("불러오기 실패:", err));
   }, []);
 
+  const handleTabChange = (newTabName) => {
+    const routeId = REVERSE_TAB_MAPPING[newTabName];
+    if (routeId) {
+      navigate(`/about/${routeId}`);
+    }
+  };
+
   if (!data) return <p>로딩 중...</p>;
   return (
     <div>
-      <SubNavBar tabs={projectTabs} currentTab={tab} setCurrentTab={setTab} currentPage={"소개"} />
-      <AboutTabs data={data} tab={tab} />
+      <SubNavBar tabs={projectTabs} currentTab={currentTab} setCurrentTab={handleTabChange} currentPage={"소개"} />
+      <AboutTabs data={data} tab={currentTab} />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const routes = ['/', '/about', '/projects'];
+const routes = ['/', '/about/intro', '/about/paper', '/about/award', '/about/cert', '/projects'];
 
 export const useScrollNavigation = () => {
     const navigate = useNavigate();

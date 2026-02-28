@@ -26,7 +26,28 @@
 .paper-card-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
 
+.paper-download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.paper-download-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.paper-download-link .download-icon {
+  width: 24px;
+  height: 24px;
 }
 
 
@@ -132,10 +153,26 @@
 @media (max-width: 768px) {
   .intro-columns {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .intro-column:first-child {
-    justify-content: flex-start;
+    justify-content: center;
+  }
+
+  .intro-paragraph {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  .paper-card-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .paper-download-link {
+    width: 100%;
+    margin-top: 10px;
   }
 }

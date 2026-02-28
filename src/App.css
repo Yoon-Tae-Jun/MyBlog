@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .app-root {
   position: relative;
   min-height: 100vh;
@@ -12,7 +16,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 1px;     /* 기본 별 크기, 각 레이어에서 다시 조정 */
+  width: 1px;
+  /* 기본 별 크기, 각 레이어에서 다시 조정 */
   height: 1px;
   background: transparent;
   z-index: 0;
@@ -73,17 +78,20 @@
   pointer-events: none;
   z-index: 0;
 }
+
 /* 유성 기본 스타일 */
 .shooting-stars::before,
 .shooting-stars::after {
   content: "";
   position: absolute;
-  top: -200px;        /* 화면 위에서 시작 */
+  top: -200px;
+  /* 화면 위에서 시작 */
   width: 2px;
   height: 80px;
   background: linear-gradient(white, transparent);
   opacity: 0.8;
-  transform: rotate(45deg); /* 대각선으로 떨어지게 */
+  transform: rotate(45deg);
+  /* 대각선으로 떨어지게 */
   border-radius: 999px;
   animation: shooting 3s ease-in-out infinite;
 }
@@ -106,9 +114,11 @@
     transform: translate(0, 0) rotate(45deg);
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   100% {
     transform: translate(-600px, 600px) rotate(45deg);
     opacity: 0;
@@ -121,10 +131,12 @@
 .stars3::after {
   content: "";
   position: absolute;
-  top: 1000px;         /* 아래쪽에 동일 패턴 하나 더 */
+  top: 1000px;
+  /* 아래쪽에 동일 패턴 하나 더 */
   width: inherit;
   height: inherit;
-  box-shadow: inherit; /* 동일한 별 패턴 복붙 */
+  box-shadow: inherit;
+  /* 동일한 별 패턴 복붙 */
 }
 
 /* 별이 위로 움직이는데, 1000px만큼만 올렸다가 다시 시작 */
@@ -132,6 +144,7 @@
   from {
     transform: translateY(0);
   }
+
   to {
     transform: translateY(-1000px);
   }
@@ -153,6 +166,7 @@
     opacity: 0;
     transform: translateY(15px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);

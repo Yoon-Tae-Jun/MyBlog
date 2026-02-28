@@ -204,6 +204,8 @@ function renderIntroBlock(block) {
 
 
 
+import { FiDownload } from "react-icons/fi";
+
 function PaperCard({ item }) {
   return (
     <div className="paper-card-content">
@@ -218,7 +220,7 @@ function PaperCard({ item }) {
         href={`${import.meta.env.BASE_URL}/papers/${encodeURIComponent(item.file)}`}
         download
       >
-        📎 다운로드
+        <FiDownload className="download-icon" />
       </a>
     </div>
   );

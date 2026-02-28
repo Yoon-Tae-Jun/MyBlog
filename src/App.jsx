@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Home from "./pages/Home/home";
 import Projects from "./pages/Projects/Projects";
 import About from "./pages/About/About";
@@ -14,7 +14,8 @@ function AnimatedRoutes() {
       <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<Navigate to="/about/intro" replace />} />
+        <Route path="/about/:tabId" element={<About />} />
       </Routes>
     </div>
   );

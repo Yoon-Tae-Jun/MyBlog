@@ -7,12 +7,14 @@
     width: 100%;
     color: white;
 }
-.subNavBar-content-wrapper{
+
+.subNavBar-content-wrapper {
     margin: 0 auto;
     max-width: 1250px;
     width: 100%;
     padding: 0 20px;
 }
+
 .current-content {
     display: flex;
     flex-direction: column;
@@ -20,12 +22,13 @@
     height: 120px;
 }
 
-.current-tab{
+.current-tab {
     font-weight: 900;
     font-size: 22px;
     color: white;
 }
-.current-path{
+
+.current-path {
     margin-top: 5px;
     font-size: 14px;
     color: white;
@@ -48,10 +51,38 @@
     font-size: 16px;
     color: white;
     height: 50%;
-  }
-  
-  .tab-button.active {
+}
+
+.tab-button.active {
     border-bottom: 3px solid #3ea8ff;
     color: #3ea8ff;
     font-weight: bold;
-  }
+}
+
+/* 반응형 모바일 대응 */
+@media (max-width: 768px) {
+    .subNavBar-container {
+        height: 200px;
+    }
+
+    .current-content {
+        height: 90px;
+    }
+
+    .current-tab {
+        font-size: 18px;
+    }
+
+    .tab-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-left: 5px;
+        height: 80px;
+    }
+
+    .tab-button {
+        margin: 0 5px;
+        font-size: 14px;
+        padding: 5px;
+    }
+}
