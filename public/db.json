@@ -186,7 +186,7 @@
       "description": "임베디드 환경에서 캔, 플라스틱과 플라스틱의 구성요소를 분리하는 프로젝트 ",
       "tag": [
         "Edge AI",
-        "Object Detection",
+        "Computer Vision",
         "Hailo"
       ],
       "status": "Completed"
@@ -196,7 +196,7 @@
       "description": "얼굴을 인식하여 도어락을 개폐하는 시스템",
       "tag": [
         "Edge AI",
-        "Object Detection"
+        "Computer Vision"
       ],
       "status": "Completed"
     },
@@ -206,6 +206,16 @@
       "tag": [
         "MLOps",
         "Web"
+      ],
+      "status": "In Progress"
+    },
+    "4": {
+      "ProjectName": "배드민턴 분석 플랫폼",
+      "description": "아마추어를 위한 배드민턴 분석 플랫폼",
+      "tag": [
+        "Cloud",
+        "Computer Vision",
+        "Sports Data Analytics"
       ],
       "status": "In Progress"
     }
