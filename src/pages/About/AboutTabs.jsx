@@ -7,7 +7,7 @@ function AboutTabs({ data, tab }) {
     return (
       <div className="about-container">
         <div className="about-content-wrapper">
-          <div className="about-home">
+          <div className="about-home" style={{ paddingBottom: '80px' }}>
             {blocks.map((block) => renderIntroBlock(block))}
           </div>
         </div>
@@ -84,30 +84,43 @@ function renderIntroBlock(block) {
     );
   }
 
-  /* ------------------------
-     2) 글머리표 리스트
-     ------------------------ */
-  if (type === "bulleted_list_item") {
-    const text = (block.bulleted_list_item?.rich_text || [])
+  if (type === "bulleted_list_item" || type === "numbered_list_item") {
+    const text = (block[type]?.rich_text || [])
       .map(t => t.plain_text)
       .join("");
+    const childrenBlocks = block.children || [];
+    
     return (
-      <p key={block.id} className="intro-bullet">
-        <span className="intro-bullet-dot">•</span>
-        <span>{text}</span>
-      </p>
-    );
-  }
-
-  if (type === "numbered_list_item") {
-    const text = (block.numbered_list_item?.rich_text || [])
-      .map(t => t.plain_text)
-      .join("");
-    return (
-      <p key={block.id} className="intro-bullet">
-        <span className="intro-bullet-dot">•</span>
-        <span>{text}</span>
-      </p>
+      <div key={block.id} style={{ marginLeft: "10px", marginTop: "4px", marginBottom: "4px" }}>
+        <p className="intro-bullet" style={{ margin: 0 }}>
+          <span className="intro-bullet-dot">{type === "bulleted_list_item" ? "•" : "-"}</span>
+          <span>{text}</span>
+        </p>
+        {childrenBlocks.length > 0 && (
+          <div style={{ marginLeft: "20px" }}>
+            {childrenBlocks.map((childBlock) => {
+              if (childBlock.type === "bulleted_list_item") {
+                const childText = (childBlock.bulleted_list_item?.rich_text || []).map(t => t.plain_text).join("");
+                const grandChildren = childBlock.children || [];
+                return (
+                  <div key={childBlock.id} style={{ marginTop: "4px", marginBottom: "4px" }}>
+                    <p className="intro-bullet" style={{ margin: 0 }}>
+                      <span className="intro-bullet-dot">◦</span>
+                      <span>{childText}</span>
+                    </p>
+                    {grandChildren.length > 0 && (
+                      <div style={{ marginLeft: "20px" }}>
+                        {grandChildren.map(gc => renderIntroBlock(gc))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              return renderIntroBlock(childBlock);
+            })}
+          </div>
+        )}
+      </div>
     );
   }
 

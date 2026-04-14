@@ -1,5 +1,6 @@
 // src/pages/Projects/Projects.jsx
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Projects.css";
 
 const FILTERS = ["All", "Edge AI", "MLOps", "Web", "Other"];
@@ -7,6 +8,7 @@ const FILTERS = ["All", "Edge AI", "MLOps", "Web", "Other"];
 function Projects() {
   const [projects, setProjects] = useState([]);
   const [currentFilter, setCurrentFilter] = useState("All");
+  const navigate = useNavigate();
 
   useEffect(() => {
     // public/db.json 은 /db.json 으로 접근 가능
@@ -71,7 +73,12 @@ function Projects() {
         {/* 프로젝트 카드 리스트 */}
         <div className="projects-grid">
           {filteredProjects.map((project) => (
-            <article key={project.id} className="project-card">
+            <article 
+              key={project.id} 
+              className="project-card"
+              onClick={() => navigate(`/projects/${project.id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <div className="project-card-header">
                 <h2 className="project-card-title">{project.title}</h2>
                 <span

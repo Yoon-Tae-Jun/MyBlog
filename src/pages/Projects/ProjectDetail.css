@@ -1,0 +1,164 @@
+.project-detail-page {
+  padding-top: 1px;
+  width: 100%;
+  min-height: calc(100vh - 80px - 200px);
+  /* Adjust based on navbar and footer */
+  color: #e5e7eb;
+}
+
+.project-detail-inner {
+  margin: 40px auto;
+  max-width: 1300px;
+  width: calc(100% - 40px);
+  /* 좌우 여백 */
+  padding: 40px;
+  background: rgba(15, 23, 42, 0.65);
+  /* 약간의 남색 틴트를 준 반투명 */
+  backdrop-filter: blur(10px);
+  /* 뒤 배경 별자리가 부드럽게 비치게 함 */
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pd-back-btn {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid #94a3b8;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.2s ease;
+}
+
+.pd-back-btn:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pd-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.pd-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #f8fafc;
+}
+
+.pd-tags-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.pd-meta-tag {
+  background: rgba(148, 163, 184, 0.1);
+  color: #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.pd-status-badge {
+  color: #050b23;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: #fef08a;
+  /* Experimental style fallback */
+}
+
+.pd-status-badge.status-completed {
+  background-color: #86efac;
+}
+
+.pd-status-badge.status-in-progress {
+  background-color: #93c5fd;
+}
+
+.pd-content {
+  line-height: 1.7;
+}
+
+/* ================================
+   Notion Block Renderer Styles
+   ================================ */
+.pd-block-h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.pd-block-h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.pd-block-h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #bae6fd;
+}
+
+.pd-block-p {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+.pd-block-bullet {
+  display: flex;
+  margin: 8px 0;
+  margin-left: 10px;
+}
+
+.pd-block-bullet-dot {
+  margin-right: 12px;
+  color: #94a3b8;
+}
+
+.pd-block-image-wrapper {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.pd-block-image {
+  max-width: 100%;
+  max-height: 550px; /* 창이 넓어져도 사진이 무한정 커지지 않도록 제한 */
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+.pd-block-quote {
+  border-left: 4px solid #94a3b8;
+  padding-left: 16px;
+  margin: 20px 0;
+  color: #94a3b8;
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
+.pd-block-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
