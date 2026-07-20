@@ -10,7 +10,7 @@ function Home(){
                 </span>
             </div>
             <div className='home-interest fade-in-up'>
-                Edge AI · CV · NLP · MLOps
+                Edge AI · CV · MLOps
             </div>
         </div>
     )
