@@ -1,44 +1,29 @@
 {
   "논문": {
     "0": {
-      "paperName": "딥러닝 기술을 활용한 얼굴 인식 도어락 시스템",
+      "paperName": "감정 분석 기반 약물 검색 시스템",
       "author": [
-        "강윤경",
+        "김한울",
+        "왕성훈",
         "윤태준",
-        "이소연",
-        "박지훈",
         "김대영"
       ],
-      "conferenceName": "2021년도 한국인터넷정보학회 추계학술발표대회",
-      "date": "2021.10.22(금)-24(일)",
-      "file": "딥러닝 기술을 활용한 얼굴 인식 도어락 시스템.pdf"
+      "conferenceName": "2025 한국데이터사이언스학회 동계학술대회",
+      "date": "2025.12.18(목)-19(금)",
+      "file": "감정 분석 기반 약물 검색 시스템.pdf"
     },
     "1": {
-      "paperName": "Semantic Segmentation 기반 실시간 교통 혼잡 판단 시스템",
+      "paperName": "Performance Evaluation of Parallel Inference Pipeline for Multi-Model Processing on Edge Devices\n",
       "author": [
-        "배민지",
-        "윤태준",
-        "이소연",
-        "김대영"
+        "SoYeon Lee",
+        "Tae-Jun Yoon",
+        "Dae-Young Kim"
       ],
-      "conferenceName": "2022년도 한국통신학회 동계종합학술발표회",
-      "date": "2022.02.09(수)-11(금)",
-      "file": "Semantic Segmentation 기반 실시간 교통 혼잡 판단 시스템.pdf"
+      "conferenceName": "ML4CS 2025",
+      "date": "2025.12.12(금)-14(일)",
+      "file": "ML4CS_2025_paper_85.pdf"
     },
     "2": {
-      "paperName": "의미론적 분할을 이용한 스마트 팩토리 제품 불량 검출 시스템",
-      "author": [
-        "윤태준",
-        "강윤경",
-        "배민지",
-        "이소연",
-        "김대영"
-      ],
-      "conferenceName": "2022년도 한국인터넷정보학회 춘계학술발표대회",
-      "date": "2022.04.29(금)-30(토)",
-      "file": "의미론적 분할을 이용한 스마트 팩토리 제품 불량 검출 시스템.pdf"
-    },
-    "3": {
       "paperName": "C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘",
       "author": [
         "이소연",
@@ -50,18 +35,30 @@
       "date": "2022.04.29(금)-30(토)",
       "file": "[KSII] C-ITS 통신 시스템에서의 Semantic Segmentation 기반 교통정체 상황 판단 알고리즘(최종).pdf"
     },
-    "4": {
-      "paperName": "Dataset construction method for network intelligence",
+    "3": {
+      "paperName": "투명 페트병 분리를 위한 Hailo-8 기반 경량 객체 검출 시스템",
       "author": [
-        "SoYeon Lee",
-        "Jihoon Park",
-        "Tae-Jun Yoon",
-        "MinJi Bae",
-        "Dae-Young Kim"
+        "윤태준",
+        "정윤희",
+        "이소연",
+        "김대영"
       ],
-      "conferenceName": "The 17th AsiaPacific International Conference on Information Science and Technology (APIC-IST 2022)",
-      "date": "2022.06.19(일)-21(화)",
-      "file": "Proceedings_of_APIC-IST_2022-66-68.pdf"
+      "conferenceName": "2025 대한전자공학회 하계학술대회",
+      "date": "2025.06.24(화)-27(금)",
+      "file": "투명 페트병 분리를 위한 Hailo-8기반 경량 객체 검출 시스템(submit).pdf"
+    },
+    "4": {
+      "paperName": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스",
+      "author": [
+        "윤태준",
+        "이소연",
+        "박지훈",
+        "김민승",
+        "김대영"
+      ],
+      "conferenceName": "2022 ICT플랫폼학회 추계학술대회",
+      "date": "2022.12.08(목)",
+      "file": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스.pdf"
     },
     "5": {
       "paperName": "YOLOv7 기반 순환 가능한 PET 분류 시스템",
@@ -77,69 +74,72 @@
       "file": "YOLOv7 기반 순환 가능한 PET 분류시스템.pdf"
     },
     "6": {
-      "paperName": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스",
+      "paperName": "Semantic Segmentation 기반 실시간 교통 혼잡 판단 시스템",
       "author": [
+        "배민지",
+        "윤태준",
+        "이소연",
+        "김대영"
+      ],
+      "conferenceName": "2022년도 한국통신학회 동계종합학술발표회",
+      "date": "2022.02.09(수)-11(금)",
+      "file": "Semantic Segmentation 기반 실시간 교통 혼잡 판단 시스템.pdf"
+    },
+    "7": {
+      "paperName": "의미론적 분할을 이용한 스마트 팩토리 제품 불량 검출 시스템",
+      "author": [
+        "윤태준",
+        "강윤경",
+        "배민지",
+        "이소연",
+        "김대영"
+      ],
+      "conferenceName": "2022년도 한국인터넷정보학회 춘계학술발표대회",
+      "date": "2022.04.29(금)-30(토)",
+      "file": "의미론적 분할을 이용한 스마트 팩토리 제품 불량 검출 시스템.pdf"
+    },
+    "8": {
+      "paperName": "딥러닝 기술을 활용한 얼굴 인식 도어락 시스템",
+      "author": [
+        "강윤경",
         "윤태준",
         "이소연",
         "박지훈",
-        "김민승",
         "김대영"
       ],
-      "conferenceName": "2022 ICT플랫폼학회 추계학술대회",
-      "date": "2022.12.08(목)",
-      "file": "공공데이터를 이용한 실시간 셔틀버스 정보 서비스.pdf"
-    },
-    "7": {
-      "paperName": "투명 페트병 분리를 위한 Hailo-8 기반 경량 객체 검출 시스템",
-      "author": [
-        "윤태준",
-        "정윤희",
-        "이소연",
-        "김대영"
-      ],
-      "conferenceName": "2025 대한전자공학회 하계학술대회",
-      "date": "2025.06.24(화)-27(금)",
-      "file": "투명 페트병 분리를 위한 Hailo-8기반 경량 객체 검출 시스템(submit).pdf"
-    },
-    "8": {
-      "paperName": "Performance Evaluation of Parallel Inference Pipeline for Multi-Model Processing on Edge Devices\n",
-      "author": [
-        "SoYeon Lee",
-        "Tae-Jun Yoon",
-        "Dae-Young Kim"
-      ],
-      "conferenceName": "ML4CS 2025",
-      "date": "2025.12.12(금)-14(일)",
-      "file": "ML4CS_2025_paper_85.pdf"
+      "conferenceName": "2021년도 한국인터넷정보학회 추계학술발표대회",
+      "date": "2021.10.22(금)-24(일)",
+      "file": "딥러닝 기술을 활용한 얼굴 인식 도어락 시스템.pdf"
     },
     "9": {
-      "paperName": "감정 분석 기반 약물 검색 시스템",
+      "paperName": "Dataset construction method for network intelligence",
       "author": [
-        "김한울",
-        "왕성훈",
-        "윤태준",
-        "김대영"
+        "SoYeon Lee",
+        "Jihoon Park",
+        "Tae-Jun Yoon",
+        "MinJi Bae",
+        "Dae-Young Kim"
       ],
-      "conferenceName": "2025 한국데이터사이언스학회 동계학술대회",
-      "date": "2025.12.18(목)-19(금)",
-      "file": "감정 분석 기반 약물 검색 시스템.pdf"
+      "conferenceName": "The 17th AsiaPacific International Conference on Information Science and Technology (APIC-IST 2022)",
+      "date": "2022.06.19(일)-21(화)",
+      "file": "Proceedings_of_APIC-IST_2022-66-68.pdf"
     }
   },
   "수상경력": {
     "0": {
-      "contestName": "자율배송 운행데이터 데이터톤 2021 AI모델개발부분",
+      "contestName": "BLEP 데이터 활용 경진대회",
       "awardType": "장려상",
-      "date": "2021.12.18(토)"
+      "date": "2025.10.28(화)"
     },
     "1": {
-      "contestName": "2022  순천향 SW경시대회",
-      "awardType": "장려상",
-      "date": "2022.11.10(목)"
-    },
-    "2": {
       "contestName": "2022 SCH AI,SW Festival",
       "awardType": "장려상",
       "date": "2022.04.29(금)-30(토)"
+    },
+    "2": {
+      "contestName": "자율배송 운행데이터 데이터톤 2021 AI모델개발부분",
+      "awardType": "장려상",
+      "date": "2021.12.18(토)"
     },
     "3": {
       "contestName": "메가시티 실전문제연구단 연합 경진대회",
@@ -147,31 +147,964 @@
       "date": "2022.06.19(일)-21(화)"
     },
     "4": {
-      "contestName": "BLEP 데이터 활용 경진대회",
+      "contestName": "2022  순천향 SW경시대회",
       "awardType": "장려상",
-      "date": "2025.10.28(화)"
+      "date": "2022.11.10(목)"
     }
   },
   "자격증": {
     "0": {
-      "CertificationName": "정보처리기능사",
-      "date": "2021.10"
+      "CertificationName": "비서3급",
+      "date": "2024.11"
     },
     "1": {
-      "CertificationName": "자동차운전면허(2종보통)",
-      "date": "2022.07"
-    },
-    "2": {
       "CertificationName": "워드프로세서",
       "date": "2024.11"
     },
+    "2": {
+      "CertificationName": "자동차운전면허(2종보통)",
+      "date": "2022.07"
+    },
     "3": {
-      "CertificationName": "비서3급",
-      "date": "2024.11"
+      "CertificationName": "정보처리기능사",
+      "date": "2021.10"
     }
   },
   "프로젝트": {
     "0": {
+      "ProjectName": "배드민턴 분석 플랫폼",
+      "description": "아마추어를 위한 배드민턴 분석 플랫폼",
+      "tag": [
+        "Cloud",
+        "Computer Vision",
+        "Sports Data Analytics"
+      ],
+      "status": "In Progress",
+      "blocks": []
+    },
+    "1": {
+      "ProjectName": "LabOps",
+      "description": "연구실에서 사용하기 위한 MLOps 플랫폼",
+      "tag": [
+        "MLOps",
+        "Web"
+      ],
+      "status": "In Progress",
+      "blocks": []
+    },
+    "2": {
+      "ProjectName": "얼굴 인식 도어락 시스템",
+      "description": "얼굴을 인식하여 도어락을 개폐하는 시스템",
+      "tag": [
+        "Edge AI",
+        "Computer Vision"
+      ],
+      "status": "Completed",
+      "blocks": [
+        {
+          "id": "3426601c-5e93-8072-b854-c77ce1ff4734",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Overview",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3426601c-5e93-806f-8412-f476a54a3635",
+          "type": "column_list",
+          "has_children": true,
+          "children": [
+            {
+              "id": "3426601c-5e93-80e4-8a30-de271d98db54",
+              "type": "column",
+              "has_children": true,
+              "children": [
+                {
+                  "id": "3426601c-5e93-8046-9e87-e31154ab96b4",
+                  "type": "image",
+                  "has_children": false,
+                  "image": {
+                    "name": "3426601c-5e93-8046-9e87-e31154ab96b4_image.png",
+                    "source_type": "file",
+                    "caption": []
+                  }
+                }
+              ]
+            },
+            {
+              "id": "3426601c-5e93-802b-a61e-ed44a58f5ca9",
+              "type": "column",
+              "has_children": true,
+              "children": [
+                {
+                  "id": "3426601c-5e93-802c-90a0-e6fa1d74524f",
+                  "type": "image",
+                  "has_children": false,
+                  "image": {
+                    "name": "3426601c-5e93-802c-90a0-e6fa1d74524f_image.png",
+                    "source_type": "file",
+                    "caption": []
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3426601c-5e93-803a-a474-c7591317facd",
+          "type": "paragraph",
+          "has_children": false,
+          "paragraph": {
+            "rich_text": [],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3426601c-5e93-80c7-8e0d-fb2228782dbb",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Content",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3426601c-5e93-80c6-ad63-d5f89c6b2fbb",
+          "type": "image",
+          "has_children": false,
+          "image": {
+            "name": "3426601c-5e93-80c6-ad63-d5f89c6b2fbb_image.png",
+            "source_type": "file",
+            "caption": []
+          }
+        },
+        {
+          "id": "3426601c-5e93-808a-9035-c9f1a11b77a5",
+          "type": "paragraph",
+          "has_children": false,
+          "paragraph": {
+            "rich_text": [],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3426601c-5e93-80e9-9257-c740921f8691",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Review",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    "3": {
+      "ProjectName": "PET 분류 시스템",
+      "description": "임베디드 환경에서 캔, 플라스틱과 플라스틱의 구성요소를 분리하는 프로젝트 ",
+      "tag": [
+        "Edge AI",
+        "Computer Vision",
+        "Hailo"
+      ],
+      "status": "Completed",
+      "blocks": [
+        {
+          "id": "3426601c-5e93-809c-b14f-fb8135497c2f",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Overview",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80fd-9588-f86f815c0f21",
+          "type": "image",
+          "has_children": false,
+          "image": {
+            "name": "3a46601c-5e93-80fd-9588-f86f815c0f21_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-07-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.06.50.png",
+            "source_type": "file",
+            "caption": []
+          }
+        },
+        {
+          "id": "3426601c-5e93-80cf-a4ff-db24fc5dafd7",
+          "type": "paragraph",
+          "has_children": false,
+          "paragraph": {
+            "rich_text": [
+              {
+                "plain_text": "재활용 공정에서 페트병에 부착된 뚜껑, 라벨, 고리 제거는 대부분 수작업에 의존해 정확도 저하와 처리 속도 한계가 있었습니다. 이를 해결하기 위해 Hailo-8 가속기와 Raspberry Pi 5를 활용해 실시간 경량 객체 검출 시스템을 설계·구현했습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3426601c-5e93-8074-b454-f8ad236698e7",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Content",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80b8-bf48-fe80c03c58f9",
+          "type": "image",
+          "has_children": false,
+          "image": {
+            "name": "3a46601c-5e93-80b8-bf48-fe80c03c58f9_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-07-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.29.54.png",
+            "source_type": "file",
+            "caption": []
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8080-9544-d9b9de5598df",
+          "type": "numbered_list_item",
+          "has_children": true,
+          "numbered_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "AI Server (모델 학습 Layer)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-803a-838c-c0c4214c8346",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "기술 스택: Tensorflow, CVAT",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-806a-8535-c952b27d5218",
+              "type": "bulleted_list_item",
+              "has_children": true,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "학습 방법",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              },
+              "children": [
+                {
+                  "id": "3a46601c-5e93-80a8-aa54-d2c0e993e4ab",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "모델: YOLv8n ",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                },
+                {
+                  "id": "3a46601c-5e93-803f-b14f-d8e1823510a9",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "클래스 : 뚜껑/고리/라벨",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                },
+                {
+                  "id": "3a46601c-5e93-80a8-bb46-e61bea8b8e10",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "데이터셋: Can/Plastic 64,176장, Cap/Ring/Label 7,215장",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "3a46601c-5e93-8024-9b3a-c43941643c12",
+              "type": "bulleted_list_item",
+              "has_children": true,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "학습 결과",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              },
+              "children": [
+                {
+                  "id": "3a46601c-5e93-8012-a740-c1b52714c38e",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "Can/Plastic 0.99 mAP@0.5",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                },
+                {
+                  "id": "3a46601c-5e93-8015-a876-f9463685197f",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "Cap/Ring/Label 0.88 mAP@0.5",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-801f-b6e0-d1f5ed338e50",
+          "type": "numbered_list_item",
+          "has_children": true,
+          "numbered_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "Quantization Server (모델 경량화 Layer)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-808e-9da8-fed709dac11a",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "기술 스택: ONNX, Hailo Dataflow Compiler",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-80bf-add5-f6814f37970f",
+              "type": "bulleted_list_item",
+              "has_children": true,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "방법",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              },
+              "children": [
+                {
+                  "id": "3a46601c-5e93-8000-ab57-c43c7dffbcf6",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "학습된 모델을 ONNX 형식으로 변환",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                },
+                {
+                  "id": "3a46601c-5e93-80df-a363-f02590fcc3f0",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "Random Calibration 기반 8bit 정수 양자화 적용",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                },
+                {
+                  "id": "3a46601c-5e93-808e-88c3-f74924a58f87",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "HEF(Hailo Executable Format) 컴파일을 통해 Hailo-8에서 직접 실행 가능한 바이너리 생성",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-8038-b486-d460fe8d712e",
+          "type": "numbered_list_item",
+          "has_children": true,
+          "numbered_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "RPI 5 + Hailo-8 (실시간 추론 Layer)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-80cc-ab0a-f87ae0c96abc",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "기술 스택: Tensorflow, OpenCV",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-80e9-b6ac-c45a4b6ec138",
+              "type": "bulleted_list_item",
+              "has_children": true,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "방법",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              },
+              "children": [
+                {
+                  "id": "3a46601c-5e93-802e-908c-fceb3100301a",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "카메라 영상 입력 및 모델 형식에 맞게 전처리",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                },
+                {
+                  "id": "3a46601c-5e93-8036-a800-f3e57e7e0081",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "모델 추론(순차 처리) 및 후처리",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                },
+                {
+                  "id": "3a46601c-5e93-801a-a957-ccb258b172ad",
+                  "type": "bulleted_list_item",
+                  "has_children": false,
+                  "bulleted_list_item": {
+                    "rich_text": [
+                      {
+                        "plain_text": "FPS, BBox, 사용자 안내 메시지 overlay 후 영상 출력",
+                        "href": null,
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        }
+                      }
+                    ],
+                    "color": "default"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-80ca-8111-e391ed627e54",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "Jetson Nano VS RPI5 + Hailo-8",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-80c2-8899-e7ede683692b",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": " 평균 FPS가 Jetson Nano(3.16FPS) 대비 8.6배 향상된 추론 속도(27.18FPS)를 보임",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-8065-9126-f881d6da12b4",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "임베디드 환경에서 복합 객체 검출 모델의 실시간 추론이 안정적으로 동작",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3426601c-5e93-807d-a1dc-de6d82a6f1bc",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Review",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-805e-a35e-c9360368fb5f",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "전체 파이프라인 경험",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\n데이터 라벨링과 증강부터 모델 학습, 양자화, 엣지 디바이스 배포까지 전 과정을 직접 경험할 수 있었습니다. 학습 단계에서 좋은 정확도가 나와도 그게 곧바로 실사용으로 이어지지 않는다는 걸 체감했고, 학습-변환-추론까지 이어지는 흐름을 처음부터 끝까지 다뤄봤다는 점이 가장 큰 수확이었습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8016-9360-e0cde170abe4",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "엣지 환경 안정성",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\n서버 기반 딥러닝 파이프라인에서 mAP 92%라는 수치를 확인하는 것과, Raspberry Pi 5 + Hailo-8이라는 제한된 자원 환경에서 실시간으로 끊김 없이 동작하는 것 사이엔 분명한 차이가 있었습니다. 정확도가 아무리 높아도 엣지에서 느리거나 불안정하면 의미가 없다는 걸 이 프로젝트를 통해 확실히 알게 됐습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80f9-8636-e338edc6f391",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "양자화 트레이드오프",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\nRandom Calibration 방식은 별도 대표 데이터셋 없이도 빠르게 양자화를 검증할 수 있어 개발 초기엔 유리했지만, 실제 데이터 분포를 반영하지 못해 정확도에 제한이 있다는 한계도 직접 겪으며 배웠습니다. 속도와 정확도 사이에서 어디까지 타협할 수 있는지 판단하는 감각을 이 과정에서 키울 수 있었으며 calbration set의 중요성을 깨닫고 향후 적용할 수 있는 경험이었습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        }
+      ]
+    },
+    "4": {
       "ProjectName": "Bus 프로젝트",
       "description": "지하철과 학교 셔틀버스 시간표를 연계하여 만든 웹사이트",
       "tag": [
@@ -1075,269 +2008,6 @@
           }
         }
       ]
-    },
-    "1": {
-      "ProjectName": "PET 분류 시스템",
-      "description": "임베디드 환경에서 캔, 플라스틱과 플라스틱의 구성요소를 분리하는 프로젝트 ",
-      "tag": [
-        "Edge AI",
-        "Computer Vision",
-        "Hailo"
-      ],
-      "status": "Completed",
-      "blocks": [
-        {
-          "id": "3426601c-5e93-809c-b14f-fb8135497c2f",
-          "type": "heading_1",
-          "has_children": false,
-          "heading_1": {
-            "rich_text": [
-              {
-                "plain_text": "Overview",
-                "href": null,
-                "annotations": {
-                  "bold": false,
-                  "italic": false,
-                  "strikethrough": false,
-                  "underline": false,
-                  "code": false,
-                  "color": "default"
-                }
-              }
-            ],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-80cf-a4ff-db24fc5dafd7",
-          "type": "paragraph",
-          "has_children": false,
-          "paragraph": {
-            "rich_text": [],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-8074-b454-f8ad236698e7",
-          "type": "heading_1",
-          "has_children": false,
-          "heading_1": {
-            "rich_text": [
-              {
-                "plain_text": "Content",
-                "href": null,
-                "annotations": {
-                  "bold": false,
-                  "italic": false,
-                  "strikethrough": false,
-                  "underline": false,
-                  "code": false,
-                  "color": "default"
-                }
-              }
-            ],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-80f8-b725-c87c882ab988",
-          "type": "paragraph",
-          "has_children": false,
-          "paragraph": {
-            "rich_text": [],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-807d-a1dc-de6d82a6f1bc",
-          "type": "heading_1",
-          "has_children": false,
-          "heading_1": {
-            "rich_text": [
-              {
-                "plain_text": "Review",
-                "href": null,
-                "annotations": {
-                  "bold": false,
-                  "italic": false,
-                  "strikethrough": false,
-                  "underline": false,
-                  "code": false,
-                  "color": "default"
-                }
-              }
-            ],
-            "color": "default"
-          }
-        }
-      ]
-    },
-    "2": {
-      "ProjectName": "얼굴 인식 도어락 시스템",
-      "description": "얼굴을 인식하여 도어락을 개폐하는 시스템",
-      "tag": [
-        "Edge AI",
-        "Computer Vision"
-      ],
-      "status": "Completed",
-      "blocks": [
-        {
-          "id": "3426601c-5e93-8072-b854-c77ce1ff4734",
-          "type": "heading_1",
-          "has_children": false,
-          "heading_1": {
-            "rich_text": [
-              {
-                "plain_text": "Overview",
-                "href": null,
-                "annotations": {
-                  "bold": false,
-                  "italic": false,
-                  "strikethrough": false,
-                  "underline": false,
-                  "code": false,
-                  "color": "default"
-                }
-              }
-            ],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-806f-8412-f476a54a3635",
-          "type": "column_list",
-          "has_children": true,
-          "children": [
-            {
-              "id": "3426601c-5e93-80e4-8a30-de271d98db54",
-              "type": "column",
-              "has_children": true,
-              "children": [
-                {
-                  "id": "3426601c-5e93-8046-9e87-e31154ab96b4",
-                  "type": "image",
-                  "has_children": false,
-                  "image": {
-                    "name": "3426601c-5e93-8046-9e87-e31154ab96b4_image.png",
-                    "source_type": "file",
-                    "caption": []
-                  }
-                }
-              ]
-            },
-            {
-              "id": "3426601c-5e93-802b-a61e-ed44a58f5ca9",
-              "type": "column",
-              "has_children": true,
-              "children": [
-                {
-                  "id": "3426601c-5e93-802c-90a0-e6fa1d74524f",
-                  "type": "image",
-                  "has_children": false,
-                  "image": {
-                    "name": "3426601c-5e93-802c-90a0-e6fa1d74524f_image.png",
-                    "source_type": "file",
-                    "caption": []
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "3426601c-5e93-803a-a474-c7591317facd",
-          "type": "paragraph",
-          "has_children": false,
-          "paragraph": {
-            "rich_text": [],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-80c7-8e0d-fb2228782dbb",
-          "type": "heading_1",
-          "has_children": false,
-          "heading_1": {
-            "rich_text": [
-              {
-                "plain_text": "Content",
-                "href": null,
-                "annotations": {
-                  "bold": false,
-                  "italic": false,
-                  "strikethrough": false,
-                  "underline": false,
-                  "code": false,
-                  "color": "default"
-                }
-              }
-            ],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-80c6-ad63-d5f89c6b2fbb",
-          "type": "image",
-          "has_children": false,
-          "image": {
-            "name": "3426601c-5e93-80c6-ad63-d5f89c6b2fbb_image.png",
-            "source_type": "file",
-            "caption": []
-          }
-        },
-        {
-          "id": "3426601c-5e93-808a-9035-c9f1a11b77a5",
-          "type": "paragraph",
-          "has_children": false,
-          "paragraph": {
-            "rich_text": [],
-            "color": "default"
-          }
-        },
-        {
-          "id": "3426601c-5e93-80e9-9257-c740921f8691",
-          "type": "heading_1",
-          "has_children": false,
-          "heading_1": {
-            "rich_text": [
-              {
-                "plain_text": "Review",
-                "href": null,
-                "annotations": {
-                  "bold": false,
-                  "italic": false,
-                  "strikethrough": false,
-                  "underline": false,
-                  "code": false,
-                  "color": "default"
-                }
-              }
-            ],
-            "color": "default"
-          }
-        }
-      ]
-    },
-    "3": {
-      "ProjectName": "LabOps",
-      "description": "연구실에서 사용하기 위한 MLOps 플랫폼",
-      "tag": [
-        "MLOps",
-        "Web"
-      ],
-      "status": "In Progress",
-      "blocks": []
-    },
-    "4": {
-      "ProjectName": "배드민턴 분석 플랫폼",
-      "description": "아마추어를 위한 배드민턴 분석 플랫폼",
-      "tag": [
-        "Cloud",
-        "Computer Vision",
-        "Sports Data Analytics"
-      ],
-      "status": "In Progress",
-      "blocks": []
     }
   },
   "소개": {
