@@ -190,7 +190,694 @@
         "Web"
       ],
       "status": "In Progress",
-      "blocks": []
+      "blocks": [
+        {
+          "id": "3a46601c-5e93-80f1-9f39-ecb507edc50f",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Overview",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8052-a33e-d10fa4c894bf",
+          "type": "image",
+          "has_children": false,
+          "image": {
+            "name": "3a46601c-5e93-8052-a33e-d10fa4c894bf_image.png",
+            "source_type": "file",
+            "caption": []
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80f6-a4ac-eff3a7359cc5",
+          "type": "paragraph",
+          "has_children": false,
+          "paragraph": {
+            "rich_text": [
+              {
+                "plain_text": "연구실 10명 규모의 GPU 자원을 효율적으로 공유하고, 실험 코드·데이터·모델의 버전 관리부터 학습 작업 스케줄링, 모니터링까지 통합적으로 관리하기 위한 MLOps 플랫폼을 설계·구현했습니다. 프로젝트 리드로서 전체 아키텍처 설계와 작업 기능 개발을 담당했습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80c2-a089-d16f8f46e5e2",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Content",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80d7-8cce-e2ac899ebf34",
+          "type": "image",
+          "has_children": false,
+          "image": {
+            "name": "3a46601c-5e93-80d7-8cce-e2ac899ebf34_image.png",
+            "source_type": "file",
+            "caption": []
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80cf-a77b-ef4d1445efef",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "Linux Server",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8049-90f4-c03dafa47546",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "K3s 기반 작업 스케줄링 설계 및 구현",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-8068-b962-d765e38d8821",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "하나의 학습은 작업 단위로 수행되며 작업은 큐에 입력되어 GPU 자원을 사용",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-80e8-889b-d5e6f315a1d2",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "큐에 입력된 작업은 우선순위에 따라 수행되며 우선순위 및 수행 순서는 스케줄링 페이지에서 사용자가 변경 가능함",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-80d6-9eb7-cb942ba33495",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "이미지 관리 기능 구현",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-80e7-a0ee-e70da9953cdd",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "작업에 사용되는 이미지를 생성하고 관리",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-804f-a873-d590707ec464",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "기본 base-image에 사용자의 학습 환경에 맞는 라이브러리를 명시하여 생성하는 방식",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-802e-ab48-fd88fd017fc8",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "FastAPI 기반 API Server 및 WebServer 구현",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-80f1-bcac-da429d411002",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "사용자가 작업을 등록하고 결과를 확인할 수 있는 인터페이스 제공",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-8043-a032-f3bacc3b50e3",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "사용자가 이미지를 생성하고 관리할 수 있는 인터페이스 제공",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-805b-b655-fd63a59ba736",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "Prometheus로 클러스터 전체 GPU/CPU 자원 사용률 모니터링 구축",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80f3-b2ab-e6e37f79d480",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "클러스터 — 워크스테이션 #1, #2",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-807b-a830-c8a560430e55",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "각 워크스테이션에 로컬 API Server 배치, 실제 GPU 연산 작업 수행 및 결과 저장, 전송",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-808c-ba92-efa0bb752e19",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "워크스테이션 단위 Prometheus로 개별 자원 사용량 실시간 수집 및 Control Plane 연동",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80ee-9d80-d0160d826d91",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "NAS / 형상관리",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-806e-ad90-f5b293f2d208",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "GitLab, DVC 기반 코드·데이터 버전 관리 체계 구축, 이는 Linux Serve와 연동되는 형태로 시스템에 통합",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80bb-978e-e534ac8c4af9",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "Hub Rack / Test Board",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-805a-ab7c-dcee760a68cf",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "Hub Rack에서 네트워크 시뮬레이션 및 데이터 생성, 생성된 데이터는 DB와 NAS에 저장",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80ed-b0f7-f78bdea15f39",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "Test Board에서 클러스터를 통해 학습된 모델을 배포",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80e2-871c-e4b06c3a0154",
+          "type": "paragraph",
+          "has_children": false,
+          "paragraph": {
+            "rich_text": [
+              {
+                "plain_text": "이 중 Linux Server의 k3s, API Server를 담당하여 개발했으며 프로젝트 리더로 전체 아키텍처 설계, 일정 관리를 담당하였습니다. 현재 Prometheus를 통한 서버 모니터링, 시각화를 구현하고 있습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80ef-93ca-c2ef4d9229a5",
+          "type": "paragraph",
+          "has_children": false,
+          "paragraph": {
+            "rich_text": [],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80ec-a2f1-c7d755e36e5d",
+          "type": "heading_1",
+          "has_children": false,
+          "heading_1": {
+            "rich_text": [
+              {
+                "plain_text": "Review",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8079-bd64-e23b81cbef65",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "아키텍처 설계와 리더십",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\n프로젝트 리더로서 전체 구조를 설계하면서 단순히 동작하는 시스템과 효율적으로 동작하는 시스템을 설계하는 것은 큰 차이점이 있다는 것을 느낄 수 있었으며, 혼자 개발하는 것과 팀원과 함께 개발하며 일정을 조율하는 것 또한 전혀 다른 역량이 필요하다는 것을 깨달았습니다. 특히 각 팀원의 진행 상황을 파악하고 전체 일정에 맞춰 조율하는 과정에서, 기술적 역량만큼이나 커뮤니케이션과 책임 분배가 프로젝트 성패에 중요하다는 것을 배울 수 있었습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80eb-9fe4-e4d589ec6455",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "k3s 기반 스케줄링 관련",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\nK3s로 작업 스케줄링을 직접 구현하면서, 모델 학습이라는 일회성 작업을 컨테이너 단위로 관리하고 자동화하는 MLOps의 핵심 개념을 실제로 적용해볼 수 있었습니다. 단순히 스크립트를 실행하는 것과 재현 가능하고 확장 가능한 형태로 작업을 스케줄링하는 것은 전혀 다른 문제였고, 이 경험이 단순 학습-결과 확인-재학습의 반복보다 효율적인 모델 학습 워크플로우를 고민하는 계기가 되었습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80c5-b76a-c50e8fb662e0",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "아쉬운 점",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-80da-b104-f3de6e98feb1",
+              "type": "paragraph",
+              "has_children": false,
+              "paragraph": {
+                "rich_text": [
+                  {
+                    "plain_text": "정해진 기간 내에 모든 기능을 구현하지 못해 프로젝트가 지연되며 일정 관리에 실패했습니다. 초반 설계 단계에서 각 기능의 난이도와 소요 시간을 정확히 예측하지 못한 것이 주요 원인이었습니다. 또한 설계 과정에서 오류가 있어 개발 중간에 아키텍처를 수정하게 되면서 개발이 지연되는 문제도 겪었습니다. 이를 통해 초기 설계 단계에서 더 신중하게 검토하고, 일정에 여유를 두어 예상치 못한 수정에도 대응할 수 있도록 계획하는 것의 중요성을 배울 수 있었습니다.",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-8080-90db-ce2889d6fa8c",
+          "type": "paragraph",
+          "has_children": false,
+          "paragraph": {
+            "rich_text": [],
+            "color": "default"
+          }
+        }
+      ]
     },
     "2": {
       "ProjectName": "얼굴 인식 도어락 시스템",
@@ -269,7 +956,20 @@
           "type": "paragraph",
           "has_children": false,
           "paragraph": {
-            "rich_text": [],
+            "rich_text": [
+              {
+                "plain_text": "기존 비밀번호 입력 방식 도어락은 입력 흔적이 남아 비밀번호가 노출되는 보안 취약점이 있었습니다. 지문·홍채 등 생체 정보 기반 도어락도 개인정보 노출 거부감과 비인가 시도 흔적 확인이 어렵다는 한계가 있어, 비접촉식이면서도 출입 기록을 남길 수 있는 얼굴 인식 기반 도어락 시스템을 설계·구현했습니다",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
             "color": "default"
           }
         },
@@ -306,13 +1006,294 @@
           }
         },
         {
-          "id": "3426601c-5e93-808a-9035-c9f1a11b77a5",
-          "type": "paragraph",
+          "id": "3a46601c-5e93-8089-9a34-c9ec1bc909ad",
+          "type": "heading_2",
           "has_children": false,
-          "paragraph": {
-            "rich_text": [],
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "Actuator (Arduino Uno)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
             "color": "default"
           }
+        },
+        {
+          "id": "3a46601c-5e93-808d-ac53-da9323c3253a",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "초음파 센서로 도어락 정면 객체 감지, 감지 결과를 UART로 Controller에 전송, 얼굴 인식 결과를 받아 최종 Open 신호 수신 시 도어락 구동",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-807c-a81a-cd98a49f1798",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "Controller (RPI 3b+)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8009-a431-e189cc8bd995",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "Central SW를 통해 AI Camera에 인식 요청 전송, 인식 결과를 LCD로 출력",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8017-ba7c-d56c519f9252",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "AI Camera (Jetson Nano)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80f9-a674-e643f02df237",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "카메라로 촬영한 영상을 딥러닝 모델에 통과시켜 인가자 여부 판단",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-8050-b6e2-dfc56114b05c",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "Haar cascade 얼굴 분류기 사용",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80d7-9256-c14dff758745",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "데이터셋",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-8030-9ade-ea2fbac74769",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "AI Hub 한국인 안면 데이터셋을 활용한 인가되지 않은 인원 600장",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-8095-aced-f764da4c9195",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "직접 촬영한 인가된 인원 600장",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-80b3-b1b0-c3a2df9c4f5d",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "학습",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-80b8-8809-f83a19bc2bd1",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "ours / others 클래스로 분류, 8:2로 데이터셋 구분",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-80bf-a8c1-f64eff4439ba",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "batch size: 512, epoch: 50",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
         },
         {
           "id": "3426601c-5e93-80e9-9257-c740921f8691",
@@ -322,6 +1303,108 @@
             "rich_text": [
               {
                 "plain_text": "Review",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-804c-97a5-d2ac65bf70bb",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "첫 AI 프로젝트 경험",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\n그 전까지는 이론으로만 접했던 딥러닝을 실제로 데이터셋을 모으고 라벨링하고 모델을 학습시켜 결과를 눈으로 확인하기까지 전 과정을 처음 경험했습니다. \"모델이 학습된다\"는 게 실제로는 데이터 품질, 배치 크기, epoch 수 같은 수많은 선택의 결과라는 걸 몸으로 배운 프로젝트였습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80ef-8fe4-cce0f802fdee",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "데이터셋 구성 관련",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\n직접 촬영한 인가자 이미지와 공개 데이터셋의 비인가자 이미지를 1:1 비율로 맞추면서, 클래스 불균형이 이진 분류 성능에 미치는 영향을 처음으로 체감했습니다. 데이터를 바로 모델에 학습시키지 않고, 먼저 데이터를 분석하고 전처리하여 데이터 품질과 균형을 점검한 뒤 학습해야됨을 깨달았습니다.",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-807b-a69d-d4dab3df75a1",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "아쉬운 점",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              },
+              {
+                "plain_text": "\n첫 프로젝트다 보니 하이퍼파라미터(batch size, epoch)를 체계적인 실험 없이 정해서 진행한 부분이 아쉽습니다. 이후 프로젝트들에서는 성능 지표를 기준으로 하이퍼파라미터를 튜닝하는 방식으로 접근이 달라졌습니다.",
                 "href": null,
                 "annotations": {
                   "bold": false,
@@ -436,12 +1519,12 @@
         },
         {
           "id": "3a46601c-5e93-8080-9544-d9b9de5598df",
-          "type": "numbered_list_item",
-          "has_children": true,
-          "numbered_list_item": {
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
             "rich_text": [
               {
-                "plain_text": "AI Server (모델 학습 Layer)",
+                "plain_text": "1. AI Server (모델 학습 Layer)",
                 "href": null,
                 "annotations": {
                   "bold": true,
@@ -454,201 +1537,19 @@
               }
             ],
             "color": "default"
-          },
-          "children": [
-            {
-              "id": "3a46601c-5e93-803a-838c-c0c4214c8346",
-              "type": "bulleted_list_item",
-              "has_children": false,
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "plain_text": "기술 스택: Tensorflow, CVAT",
-                    "href": null,
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    }
-                  }
-                ],
-                "color": "default"
-              }
-            },
-            {
-              "id": "3a46601c-5e93-806a-8535-c952b27d5218",
-              "type": "bulleted_list_item",
-              "has_children": true,
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "plain_text": "학습 방법",
-                    "href": null,
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    }
-                  }
-                ],
-                "color": "default"
-              },
-              "children": [
-                {
-                  "id": "3a46601c-5e93-80a8-aa54-d2c0e993e4ab",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "모델: YOLv8n ",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                },
-                {
-                  "id": "3a46601c-5e93-803f-b14f-d8e1823510a9",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "클래스 : 뚜껑/고리/라벨",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                },
-                {
-                  "id": "3a46601c-5e93-80a8-bb46-e61bea8b8e10",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "데이터셋: Can/Plastic 64,176장, Cap/Ring/Label 7,215장",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "3a46601c-5e93-8024-9b3a-c43941643c12",
-              "type": "bulleted_list_item",
-              "has_children": true,
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "plain_text": "학습 결과",
-                    "href": null,
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    }
-                  }
-                ],
-                "color": "default"
-              },
-              "children": [
-                {
-                  "id": "3a46601c-5e93-8012-a740-c1b52714c38e",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "Can/Plastic 0.99 mAP@0.5",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                },
-                {
-                  "id": "3a46601c-5e93-8015-a876-f9463685197f",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "Cap/Ring/Label 0.88 mAP@0.5",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                }
-              ]
-            }
-          ]
+          }
         },
         {
-          "id": "3a46601c-5e93-801f-b6e0-d1f5ed338e50",
-          "type": "numbered_list_item",
-          "has_children": true,
-          "numbered_list_item": {
+          "id": "3a46601c-5e93-803a-838c-c0c4214c8346",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
             "rich_text": [
               {
-                "plain_text": "Quantization Server (모델 경량화 Layer)",
+                "plain_text": "기술 스택: Tensorflow, CVAT",
                 "href": null,
                 "annotations": {
-                  "bold": true,
+                  "bold": false,
                   "italic": false,
                   "strikethrough": false,
                   "underline": false,
@@ -658,266 +1559,16 @@
               }
             ],
             "color": "default"
-          },
-          "children": [
-            {
-              "id": "3a46601c-5e93-808e-9da8-fed709dac11a",
-              "type": "bulleted_list_item",
-              "has_children": false,
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "plain_text": "기술 스택: ONNX, Hailo Dataflow Compiler",
-                    "href": null,
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    }
-                  }
-                ],
-                "color": "default"
-              }
-            },
-            {
-              "id": "3a46601c-5e93-80bf-add5-f6814f37970f",
-              "type": "bulleted_list_item",
-              "has_children": true,
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "plain_text": "방법",
-                    "href": null,
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    }
-                  }
-                ],
-                "color": "default"
-              },
-              "children": [
-                {
-                  "id": "3a46601c-5e93-8000-ab57-c43c7dffbcf6",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "학습된 모델을 ONNX 형식으로 변환",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                },
-                {
-                  "id": "3a46601c-5e93-80df-a363-f02590fcc3f0",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "Random Calibration 기반 8bit 정수 양자화 적용",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                },
-                {
-                  "id": "3a46601c-5e93-808e-88c3-f74924a58f87",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "HEF(Hailo Executable Format) 컴파일을 통해 Hailo-8에서 직접 실행 가능한 바이너리 생성",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                }
-              ]
-            }
-          ]
+          }
         },
         {
-          "id": "3a46601c-5e93-8038-b486-d460fe8d712e",
-          "type": "numbered_list_item",
-          "has_children": true,
-          "numbered_list_item": {
-            "rich_text": [
-              {
-                "plain_text": "RPI 5 + Hailo-8 (실시간 추론 Layer)",
-                "href": null,
-                "annotations": {
-                  "bold": true,
-                  "italic": false,
-                  "strikethrough": false,
-                  "underline": false,
-                  "code": false,
-                  "color": "default"
-                }
-              }
-            ],
-            "color": "default"
-          },
-          "children": [
-            {
-              "id": "3a46601c-5e93-80cc-ab0a-f87ae0c96abc",
-              "type": "bulleted_list_item",
-              "has_children": false,
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "plain_text": "기술 스택: Tensorflow, OpenCV",
-                    "href": null,
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    }
-                  }
-                ],
-                "color": "default"
-              }
-            },
-            {
-              "id": "3a46601c-5e93-80e9-b6ac-c45a4b6ec138",
-              "type": "bulleted_list_item",
-              "has_children": true,
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "plain_text": "방법",
-                    "href": null,
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    }
-                  }
-                ],
-                "color": "default"
-              },
-              "children": [
-                {
-                  "id": "3a46601c-5e93-802e-908c-fceb3100301a",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "카메라 영상 입력 및 모델 형식에 맞게 전처리",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                },
-                {
-                  "id": "3a46601c-5e93-8036-a800-f3e57e7e0081",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "모델 추론(순차 처리) 및 후처리",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                },
-                {
-                  "id": "3a46601c-5e93-801a-a957-ccb258b172ad",
-                  "type": "bulleted_list_item",
-                  "has_children": false,
-                  "bulleted_list_item": {
-                    "rich_text": [
-                      {
-                        "plain_text": "FPS, BBox, 사용자 안내 메시지 overlay 후 영상 출력",
-                        "href": null,
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        }
-                      }
-                    ],
-                    "color": "default"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "3a46601c-5e93-80ca-8111-e391ed627e54",
+          "id": "3a46601c-5e93-806a-8535-c952b27d5218",
           "type": "bulleted_list_item",
           "has_children": true,
           "bulleted_list_item": {
             "rich_text": [
               {
-                "plain_text": "Jetson Nano VS RPI5 + Hailo-8",
+                "plain_text": "학습 방법",
                 "href": null,
                 "annotations": {
                   "bold": false,
@@ -933,13 +1584,57 @@
           },
           "children": [
             {
-              "id": "3a46601c-5e93-80c2-8899-e7ede683692b",
+              "id": "3a46601c-5e93-80a8-aa54-d2c0e993e4ab",
               "type": "bulleted_list_item",
               "has_children": false,
               "bulleted_list_item": {
                 "rich_text": [
                   {
-                    "plain_text": " 평균 FPS가 Jetson Nano(3.16FPS) 대비 8.6배 향상된 추론 속도(27.18FPS)를 보임",
+                    "plain_text": "모델: YOLv8n ",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-803f-b14f-d8e1823510a9",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "클래스 : 뚜껑/고리/라벨",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-80a8-bb46-e61bea8b8e10",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "데이터셋: Can/Plastic 64,176장, Cap/Ring/Label 7,215장",
                     "href": null,
                     "annotations": {
                       "bold": false,
@@ -955,6 +1650,386 @@
               }
             }
           ]
+        },
+        {
+          "id": "3a46601c-5e93-8024-9b3a-c43941643c12",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "학습 결과",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-8012-a740-c1b52714c38e",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "Can/Plastic 0.99 mAP@0.5",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-8015-a876-f9463685197f",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "Cap/Ring/Label 0.88 mAP@0.5",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-801f-b6e0-d1f5ed338e50",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "2. Quantization Server (모델 경량화 Layer)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-808e-9da8-fed709dac11a",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "기술 스택: ONNX, Hailo Dataflow Compiler",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80bf-add5-f6814f37970f",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "방법",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-8000-ab57-c43c7dffbcf6",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "학습된 모델을 ONNX 형식으로 변환",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-80df-a363-f02590fcc3f0",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "Random Calibration 기반 8bit 정수 양자화 적용",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-808e-88c3-f74924a58f87",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "HEF(Hailo Executable Format) 컴파일을 통해 Hailo-8에서 직접 실행 가능한 바이너리 생성",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-8038-b486-d460fe8d712e",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "3. RPI 5 + Hailo-8 (실시간 추론 Layer)",
+                "href": null,
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80cc-ab0a-f87ae0c96abc",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "기술 스택: Tensorflow, OpenCV",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80e9-b6ac-c45a4b6ec138",
+          "type": "bulleted_list_item",
+          "has_children": true,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": "방법",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          },
+          "children": [
+            {
+              "id": "3a46601c-5e93-802e-908c-fceb3100301a",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "카메라 영상 입력 및 모델 형식에 맞게 전처리",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-8036-a800-f3e57e7e0081",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "모델 추론(순차 처리) 및 후처리",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            },
+            {
+              "id": "3a46601c-5e93-801a-a957-ccb258b172ad",
+              "type": "bulleted_list_item",
+              "has_children": false,
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "plain_text": "FPS, BBox, 사용자 안내 메시지 overlay 후 영상 출력",
+                    "href": null,
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    }
+                  }
+                ],
+                "color": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3a46601c-5e93-80ca-8111-e391ed627e54",
+          "type": "heading_2",
+          "has_children": false,
+          "heading_2": {
+            "rich_text": [
+              {
+                "plain_text": "결과",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
+        },
+        {
+          "id": "3a46601c-5e93-80c2-8899-e7ede683692b",
+          "type": "bulleted_list_item",
+          "has_children": false,
+          "bulleted_list_item": {
+            "rich_text": [
+              {
+                "plain_text": " 기존 Jetson Nano(3.16FPS) 대비 8.6배 향상된 추론 속도(27.18FPS)를 보임",
+                "href": null,
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                }
+              }
+            ],
+            "color": "default"
+          }
         },
         {
           "id": "3a46601c-5e93-8065-9126-f881d6da12b4",
