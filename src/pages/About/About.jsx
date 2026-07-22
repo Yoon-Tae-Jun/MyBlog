@@ -8,16 +8,17 @@ const TAB_MAPPING = {
   "intro": "자기소개",
   "paper": "논문",
   "award": "수상경력",
-  "cert": "자격증"
+  //"cert": "자격증"
 };
 const REVERSE_TAB_MAPPING = {
   "자기소개": "intro",
   "논문": "paper",
   "수상경력": "award",
-  "자격증": "cert"
+  //"자격증": "cert"
 };
 
-const projectTabs = ["자기소개", "논문", "수상경력", "자격증"];
+/* 추후 자격증 추가 */
+const projectTabs = ["자기소개", "논문", "수상경력"];
 
 // 날짜 문자열을 Date 객체로 변환 (YYYY.MM.DD 또는 YYYY.MM 형식)
 const parseDate = (dateStr) => {
