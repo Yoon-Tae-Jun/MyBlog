@@ -17,6 +17,12 @@ function AboutTabs({ data, tab }) {
 
   const items = data[tab] || [];
 
+
+  /* 추후 자격증 탭 추가
+    {tab === "자격증" && (
+      <CertificationCard item={item} />
+    )} 
+  */
   return (
     <div className="about-container">
       <div className="about-content-wrapper">
@@ -28,9 +34,6 @@ function AboutTabs({ data, tab }) {
               )}
               {tab === "수상경력" && (
                 <ContestCard item={item} />
-              )}
-              {tab === "자격증" && (
-                <CertificationCard item={item} />
               )}
             </li>
           ))}
