@@ -1,16 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { fetchContent, imageUrl } from "../../api";
+import { fetchContent, getCachedContent, invalidateContent, imageUrl } from "../../api";
 import { TextSkeleton, ErrorState } from "../../componets/State/State";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import "./ProjectDetail.css";
 
+/** 주어진 id의 프로젝트 상세를 뽑아낸다. 없으면 null. */
+function pickProject(json, id) {
+  const item = json?.["프로젝트"]?.[id];
+  if (!item) return null;
+
+  return {
+    id,
+    title: item.ProjectName || item.description,
+    description: item.description,
+    tags: item.tag || [],
+    status: item.status,
+    blocks: item.blocks || [],
+  };
+}
+
 function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [project, setProject] = useState(null);
-  const [status, setStatus] = useState("loading"); // loading | ready | error
+  // 받아 둔 원본을 그대로 두고 id에 맞는 값은 매 렌더에서 뽑아 쓴다.
+  // 이렇게 해야 다른 프로젝트로 옮겨도 항상 현재 id와 맞는 내용이 나온다.
+  const [fetched, setFetched] = useState(null);
+  const [failed, setFailed] = useState(false);
   const [reloadKey, setReloadKey] = useState(0);
+
+  const json = getCachedContent() ?? fetched;
+  const project = json ? pickProject(json, id) : null;
+  const status = failed ? "error" : json ? "ready" : "loading";
 
   usePageMeta({
     title: project?.title,
@@ -19,39 +40,25 @@ function ProjectDetail() {
   });
 
   useEffect(() => {
+    if (getCachedContent()) return; // 이미 받아 둔 게 있으면 요청하지 않는다
+
     let cancelled = false;
-    setStatus("loading");
+    setFailed(false);
 
     fetchContent()
       .then((data) => {
-        if (cancelled) return;
-        const rawProjects = data["프로젝트"] || {};
-        if (rawProjects[id]) {
-          const item = rawProjects[id];
-          const tags = item.tag || [];
-          setProject({
-            id,
-            title: item.ProjectName || item.description,
-            description: item.description,
-            tags,
-            status: item.status,
-            blocks: item.blocks || [],
-          });
-        } else {
-          setProject(null);
-        }
-        setStatus("ready");
+        if (!cancelled) setFetched(data);
       })
       .catch((err) => {
         if (cancelled) return;
         console.error("프로젝트 상세 로드 실패:", err);
-        setStatus("error");
+        setFailed(true);
       });
 
     return () => {
       cancelled = true;
     };
-  }, [id, reloadKey]);
+  }, [reloadKey]);
 
   if (status === "loading") {
     return (
@@ -67,7 +74,14 @@ function ProjectDetail() {
     return (
       <div className="project-detail-page">
         <div className="project-detail-inner">
-          <ErrorState onRetry={() => setReloadKey((k) => k + 1)} />
+          <ErrorState
+            onRetry={() => {
+              invalidateContent();
+              setFetched(null);
+              setFailed(false);
+              setReloadKey((k) => k + 1);
+            }}
+          />
         </div>
       </div>
     );

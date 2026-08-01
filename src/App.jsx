@@ -11,8 +11,10 @@ import "./App.css";
 
 function AnimatedRoutes() {
   const location = useLocation();
+  // 경로를 key로 쓰면 탭을 옮길 때마다 페이지가 통째로 다시 마운트되어
+  // 로딩 스켈레톤이 한 번 번쩍인다. 전환 연출은 View Transitions가 맡는다.
   return (
-    <div key={location.pathname} className="page-fade-in">
+    <div className="page-fade-in">
       <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

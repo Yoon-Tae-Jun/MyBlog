@@ -1,16 +1,36 @@
 // src/pages/Projects/Projects.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchContent } from "../../api";
+import { fetchContent, getCachedContent, invalidateContent } from "../../api";
 import { CardSkeleton, ErrorState, EmptyState } from "../../componets/State/State";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import "./Projects.css";
 
 const FILTERS = ["All", "Edge AI", "MLOps", "Web", "Other"];
 
+/** API 응답에서 프로젝트 카드에 필요한 값만 뽑아낸다. */
+function parseProjects(json) {
+  if (!json) return [];
+
+  return Object.entries(json["프로젝트"] || {}).map(([id, item]) => {
+    const tags = item.tag || [];
+    return {
+      id,
+      title: item.ProjectName || item.description,
+      description: item.description,
+      tags,
+      category: tags[0] || "Other", // 첫 번째 태그를 category처럼 사용
+      status: item.status,
+    };
+  });
+}
+
 function Projects() {
-  const [projects, setProjects] = useState([]);
-  const [status, setStatus] = useState("loading"); // loading | ready | error
+  const [projects, setProjects] = useState(() => parseProjects(getCachedContent()));
+  // 이미 받아 둔 데이터가 있으면 로딩 화면을 건너뛴다
+  const [status, setStatus] = useState(() =>
+    getCachedContent() ? "ready" : "loading"
+  );
   const [currentFilter, setCurrentFilter] = useState("All");
   const [reloadKey, setReloadKey] = useState(0);
   const navigate = useNavigate();
@@ -23,29 +43,14 @@ function Projects() {
   });
 
   useEffect(() => {
+    if (status === "ready" && projects.length) return;
+
     let cancelled = false;
-    setStatus("loading");
 
     fetchContent()
       .then((data) => {
         if (cancelled) return;
-        const rawProjects = data["프로젝트"] || {};
-
-        const parsed = Object.entries(rawProjects).map(([id, item]) => {
-          const tags = item.tag || [];
-          const mainTag = tags[0] || "Other"; // 첫 번째 태그를 category처럼 사용
-
-          return {
-            id,
-            title: item.ProjectName || item.description,
-            description: item.description,
-            tags,
-            category: mainTag,
-            status: item.status,
-          };
-        });
-
-        setProjects(parsed);
+        setProjects(parseProjects(data));
         setStatus("ready");
       })
       .catch((err) => {
@@ -57,6 +62,7 @@ function Projects() {
     return () => {
       cancelled = true;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reloadKey]);
 
   const filteredProjects =
@@ -94,7 +100,7 @@ function Projects() {
         {status === "loading" && <CardSkeleton count={6} />}
 
         {status === "error" && (
-          <ErrorState onRetry={() => setReloadKey((k) => k + 1)} />
+          <ErrorState onRetry={() => { invalidateContent(); setStatus("loading"); setReloadKey((k) => k + 1); }} />
         )}
 
         {/* 프로젝트 카드 리스트 */}
