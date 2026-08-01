@@ -3,17 +3,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  height: calc(100vh - 80px);
+  color: var(--text-strong);
+  min-height: calc(100vh - var(--nav-h));
+  padding: 0 24px;
+  text-align: center;
 }
 
 .home-title {
-  font-size: 3rem;
+  font-size: clamp(1.6rem, 4.2vw, 3rem);
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-strong);
   text-align: center;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   opacity: 0.95;
 }
 
@@ -61,10 +63,11 @@
 
 /* 타이핑 끝난 뒤 자연스럽게 나타나는 interest 텍스트 */
 .home-interest {
-  margin-top: 0.4rem;
-  color: #94a3b8;
+  margin-top: 0.6rem;
+  color: var(--text-muted);
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: 0.02em;
 
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
@@ -84,10 +87,10 @@
   }
 }
 
-/* 반응형 모바일 대응 */
-@media (max-width: 768px) {
-  .home-title {
-    font-size: 1.5rem;
+/* 반응형 모바일 대응: 타이핑 애니메이션은 한 줄을 전제로 하므로 끄고 페이드로 대체 */
+@media (max-width: 900px) {
+  .home-container {
+    min-height: calc(100vh - 64px);
   }
 
   .typing-text {
@@ -98,7 +101,17 @@
   }
 
   .home-interest {
-    font-size: 1.1rem;
     margin-top: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-text,
+  .home-interest {
+    animation: none;
+    opacity: 1;
+    width: auto;
+    border-right: none;
+    white-space: normal;
   }
 }

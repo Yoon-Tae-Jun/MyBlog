@@ -1,55 +1,62 @@
 .about-container {
-  background-color: #050b23;
+  /* 배경을 칠하지 않아 뒤쪽 밤하늘이 그대로 비치게 한다 */
   width: 100%;
-  min-height: calc(100vh - 80px - 270px);
-  padding-top: 1px;
-  color: #e5e7eb;
+  min-height: calc(100vh - var(--nav-h) - 270px);
+  color: var(--text);
 }
 
 .about-content-wrapper {
-  margin: 0 auto;
-  max-width: 1250px;
+  margin: 32px auto 0;
+  max-width: var(--maxw);
   width: 100%;
-  padding: 0 20px;
-  margin-top: 1em;
+  padding: 0 24px 80px;
 }
 
+/* 논문 / 수상 / 자격증 카드 */
 .card-container {
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(6px);
+  margin-top: 14px;
+  padding: 20px 22px;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
 
-  margin-top: 1em;
-  padding: 1em 10px;
-
+.card-container:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
 }
 
 .paper-card-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 .paper-download-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  color: #94a3b8;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  color: var(--text-muted);
   text-decoration: none;
   border-radius: 50%;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .paper-download-link:hover {
-  color: #ffffff;
+  color: var(--text-strong);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .paper-download-link .download-icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
-
 
 /* Home(소개) 탭용 레이아웃 */
 .about-home {
@@ -61,86 +68,93 @@
 /* column_list 전체 (이미지 + 텍스트 가로 배치) */
 .intro-columns {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   align-items: center;
   margin: 1.5rem 0;
 }
 
-/* 각 column 공통 */
 .intro-column {
   flex: 1;
+  min-width: 0;
 }
 
-/* 첫 번째 컬럼(보통 이미지 위치) */
+/* 첫 번째 컬럼(보통 프로필 이미지) */
 .intro-column:first-child {
   flex: 0 0 220px;
-  /* 너비 고정 느낌 */
   display: flex;
   justify-content: center;
 }
 
-/* 이미지 래퍼 & 이미지 스타일 */
 .intro-image-wrapper {
   margin: 20px 0;
 }
 
 .intro-image {
-  max-width: 250px;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   border-radius: 9999px;
+  border: 1px solid var(--border);
 }
 
-/* 소개 문단 스타일 */
+/* 소개 문단 */
 .intro-paragraph {
-  margin: 4px 100px;
-  line-height: 1.6;
-  font-size: 1.3rem;
+  margin: 6px 0;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  color: var(--text);
 }
 
-/* headings */
 .intro-heading {
-  margin: 1rem 0 0.5rem 0;
+  margin: 2rem 0 0.75rem;
   font-weight: 600;
+  color: var(--text-strong);
 }
 
 .intro-h1 {
-  font-size: 2rem;
-  border-bottom: 1px rgb(179, 179, 179) solid;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
 }
 
 .intro-h2 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .intro-h3 {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
+  color: #bae6fd;
 }
 
-/* bullets */
+/* 리스트 */
 .intro-bullet {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  margin: 0;
+  gap: 10px;
+  margin: 6px 0;
   padding-left: 4px;
+  line-height: 1.7;
 }
 
 .intro-bullet-dot {
   flex-shrink: 0;
   margin-top: 2px;
+  color: var(--text-muted);
 }
 
-/* quotes */
+/* 인용문 */
 .intro-quote {
-  border-left: 4px solid #ccc;
-  padding-left: 12px;
-  color: #555;
-  margin: 12px 0;
+  border-left: 3px solid var(--accent);
+  padding-left: 14px;
+  color: var(--text-muted);
+  margin: 16px 0;
   font-style: italic;
 }
 
-/* todo */
+/* 체크리스트 */
 .intro-todo {
   display: flex;
   align-items: center;
@@ -148,31 +162,67 @@
   margin: 6px 0;
 }
 
+.intro-todo input {
+  accent-color: var(--accent);
+}
 
 /* 반응형: 좁은 화면에서는 세로로 쌓기 */
 @media (max-width: 768px) {
+  .about-container {
+    min-height: auto;
+  }
+
+  .about-content-wrapper {
+    margin-top: 24px;
+    padding: 0 18px 60px;
+  }
+
   .intro-columns {
     flex-direction: column;
     align-items: center;
+    gap: 8px;
   }
 
   .intro-column:first-child {
+    flex: 0 0 auto;
     justify-content: center;
   }
 
+  .intro-image {
+    max-width: 170px;
+  }
+
   .intro-paragraph {
-    margin: 10px 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .intro-h1 {
+    font-size: 1.4rem;
+  }
+
+  .intro-h2 {
+    font-size: 1.2rem;
+  }
+
+  .intro-h3 {
+    font-size: 1.05rem;
+  }
+
+  .card-container {
+    padding: 18px;
   }
 
   .paper-card-content {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 14px;
   }
 
   .paper-download-link {
+    /* 모바일에서는 다운로드 버튼을 넓게 눌리도록 */
     width: 100%;
-    margin-top: 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    height: 44px;
   }
 }

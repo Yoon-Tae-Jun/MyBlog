@@ -1,88 +1,106 @@
 .subNavBar-container {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: space-between;
-    height: 270px;
-    width: 100%;
-    color: white;
+  width: 100%;
+  color: var(--text);
+  padding: 40px 0 0;
 }
 
 .subNavBar-content-wrapper {
-    margin: 0 auto;
-    max-width: 1250px;
-    width: 100%;
-    padding: 0 20px;
+  margin: 0 auto;
+  max-width: var(--maxw);
+  width: 100%;
+  padding: 0 24px;
 }
 
 .current-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
 .current-tab {
-    font-weight: 900;
-    font-size: 22px;
-    color: white;
+  font-weight: 700;
+  font-size: 2.25rem;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
 }
 
 .current-path {
-    margin-top: 5px;
-    font-size: 14px;
-    color: white;
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
 }
 
+/* 탭 줄: 회색 박스 대신 밑줄 형태로 정리 */
 .tab-container {
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    height: 110px;
-    background-color: rgba(107, 104, 104, 0.479);
-    padding-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
 }
 
 .tab-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin: 0 10px;
-    font-size: 16px;
-    color: white;
-    height: 50%;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  transition: color 0.18s ease;
+}
+
+.tab-button:hover {
+  color: var(--text-strong);
 }
 
 .tab-button.active {
-    border-bottom: 3px solid #3ea8ff;
-    color: #3ea8ff;
-    font-weight: bold;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tab-button.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
 }
 
 /* 반응형 모바일 대응 */
 @media (max-width: 768px) {
-    .subNavBar-container {
-        height: 200px;
-    }
+  .subNavBar-container {
+    padding-top: 28px;
+  }
 
-    .current-content {
-        height: 90px;
-    }
+  .subNavBar-content-wrapper {
+    padding: 0 18px;
+  }
 
-    .current-tab {
-        font-size: 18px;
-    }
+  .current-tab {
+    font-size: 1.65rem;
+  }
 
-    .tab-container {
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-left: 5px;
-        height: 80px;
-    }
+  .current-content {
+    margin-bottom: 18px;
+  }
 
-    .tab-button {
-        margin: 0 5px;
-        font-size: 14px;
-        padding: 5px;
-    }
+  .tab-container {
+    /* 탭이 많아지면 가로 스크롤 (스크롤바는 숨김) */
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tab-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-button {
+    padding: 10px 12px;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
 }

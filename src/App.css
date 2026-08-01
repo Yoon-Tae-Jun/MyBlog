@@ -1,5 +1,58 @@
+:root {
+  /* 배경 / 표면 */
+  --bg: #020617;
+  --surface: rgba(15, 23, 42, 0.72);
+  --surface-hover: rgba(15, 23, 42, 0.92);
+  --surface-subtle: rgba(255, 255, 255, 0.03);
+
+  /* 테두리 */
+  --border: rgba(148, 163, 184, 0.22);
+  --border-strong: rgba(148, 163, 184, 0.4);
+
+  /* 강조색 (하나로 통일) */
+  --accent: #3ea8ff;
+  --accent-soft: rgba(62, 168, 255, 0.14);
+  --accent-border: rgba(62, 168, 255, 0.5);
+
+  /* 글자 */
+  --text-strong: #f8fafc;
+  --text: #dbe3ee;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* 모양 */
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --shadow: 0 18px 45px rgba(2, 6, 23, 0.55);
+
+  /* 레이아웃 */
+  --maxw: 1120px;
+  --nav-h: 80px;
+
+  /* 본문 폰트: 한글이 깨지지 않는 시스템 폰트 우선순위 */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Segoe UI", "Noto Sans KR", "Malgun Gothic", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 키보드 사용자를 위한 포커스 표시 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .app-root {
@@ -24,19 +77,16 @@
   pointer-events: none;
 }
 
-/* 별 1 (가장 작고 많은 별) */
+/* 별 1 (가장 작고 많은 별) — 넓은 모니터에서도 오른쪽이 비지 않도록 2560px까지 배치 */
 .stars {
   box-shadow:
-    100px 50px white,
-    300px 80px white,
-    500px 120px white,
-    700px 200px white,
-    900px 150px white,
-    1100px 90px white,
-    200px 300px white,
-    600px 400px white,
-    900px 500px white,
-    1200px 600px white;
+    100px 50px white, 300px 80px white, 500px 120px white,
+    700px 200px white, 900px 150px white, 1100px 90px white,
+    200px 300px white, 600px 400px white, 900px 500px white,
+    1200px 600px white, 1450px 140px white, 1600px 420px white,
+    1750px 260px white, 1900px 90px white, 2050px 540px white,
+    2200px 200px white, 2350px 660px white, 2500px 330px white,
+    1350px 760px white, 400px 820px white;
   animation: animStar 12s linear infinite;
 }
 
@@ -45,12 +95,10 @@
   width: 2px;
   height: 2px;
   box-shadow:
-    150px 120px white,
-    350px 180px white,
-    550px 220px white,
-    800px 350px white,
-    1000px 260px white,
-    1300px 180px white;
+    150px 120px white, 350px 180px white, 550px 220px white,
+    800px 350px white, 1000px 260px white, 1300px 180px white,
+    1550px 620px white, 1850px 470px white, 2100px 120px white,
+    2400px 580px white, 700px 700px white;
   animation: animStar 16s linear infinite;
 }
 
@@ -59,11 +107,9 @@
   width: 3px;
   height: 3px;
   box-shadow:
-    250px 300px white,
-    450px 450px white,
-    700px 500px white,
-    900px 650px white,
-    1000px 700px white;
+    250px 300px white, 450px 450px white, 700px 500px white,
+    900px 650px white, 1000px 700px white, 1500px 300px white,
+    1800px 750px white, 2150px 400px white, 2450px 200px white;
   animation: animStar 20s linear infinite;
 }
 
@@ -170,5 +216,22 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* 배경 애니메이션이 불편한 사용자에게는 정지된 밤하늘을 보여준다 */
+@media (prefers-reduced-motion: reduce) {
+  .stars,
+  .stars2,
+  .stars3,
+  .shooting-stars::before,
+  .shooting-stars::after,
+  .page-fade-in {
+    animation: none;
+  }
+
+  .shooting-stars::before,
+  .shooting-stars::after {
+    opacity: 0;
   }
 }

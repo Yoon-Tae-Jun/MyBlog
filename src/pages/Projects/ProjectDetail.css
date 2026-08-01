@@ -1,59 +1,58 @@
 .project-detail-page {
-  padding-top: 1px;
   width: 100%;
-  min-height: calc(100vh - 80px - 200px);
-  /* Adjust based on navbar and footer */
-  color: #e5e7eb;
+  min-height: calc(100vh - var(--nav-h) - 200px);
+  color: var(--text);
 }
 
 .project-detail-inner {
-  margin: 40px auto;
-  max-width: 1300px;
+  margin: 40px auto 80px;
+  max-width: 860px; /* 글줄이 너무 길어지지 않는 폭 */
   width: calc(100% - 40px);
-  /* 좌우 여백 */
-  padding: 40px;
+  padding: 48px;
   background: rgba(15, 23, 42, 0.65);
-  /* 약간의 남색 틴트를 준 반투명 */
   backdrop-filter: blur(10px);
-  /* 뒤 배경 별자리가 부드럽게 비치게 함 */
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
 }
 
 .pd-back-btn {
   background: transparent;
-  color: #94a3b8;
-  border: 1px solid #94a3b8;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.88rem;
   cursor: pointer;
-  margin-bottom: 30px;
-  transition: all 0.2s ease;
+  margin-bottom: 32px;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .pd-back-btn:hover {
-  color: #fff;
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-strong);
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .pd-header {
   margin-bottom: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
 }
 
 .pd-title {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: #f8fafc;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  color: var(--text-strong);
 }
 
 .pd-tags-container {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -62,17 +61,16 @@
   color: #cbd5e1;
   padding: 4px 10px;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
 .pd-status-badge {
   color: #050b23;
   padding: 4px 10px;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   background-color: #fef08a;
-  /* Experimental style fallback */
 }
 
 .pd-status-badge.status-completed {
@@ -84,81 +82,259 @@
 }
 
 .pd-content {
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* ================================
    Notion Block Renderer Styles
    ================================ */
 .pd-block-h1 {
-  font-size: 2.2rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: -0.02em;
+  margin: 48px 0 18px;
   padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-strong);
 }
 
 .pd-block-h2 {
-  font-size: 1.75rem;
+  font-size: 1.45rem;
   font-weight: 600;
-  margin-top: 40px;
-  margin-bottom: 15px;
+  margin: 40px 0 14px;
+  color: var(--text-strong);
 }
 
 .pd-block-h3 {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-top: 25px;
-  margin-bottom: 10px;
+  margin: 28px 0 10px;
   color: #bae6fd;
 }
 
+/* 첫 제목 위에는 큰 여백이 필요 없다 */
+.pd-content > *:first-child {
+  margin-top: 0;
+}
+
 .pd-block-p {
-  margin-bottom: 16px;
-  font-size: 1.1rem;
-  color: #cbd5e1;
+  margin: 0 0 16px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.pd-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pd-inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: rgba(148, 163, 184, 0.16);
+  color: #e2e8f0;
+}
+
+/* 리스트 */
+.pd-block-bullet-container {
+  margin: 8px 0 8px 8px;
 }
 
 .pd-block-bullet {
   display: flex;
-  margin: 8px 0;
-  margin-left: 10px;
+  gap: 12px;
 }
 
 .pd-block-bullet-dot {
-  margin-right: 12px;
-  color: #94a3b8;
+  flex-shrink: 0;
+  color: var(--text-muted);
 }
 
+.pd-bullet-text {
+  color: var(--text);
+}
+
+.pd-block-bullet-children {
+  margin-left: 20px;
+}
+
+/* 중첩 단계마다 불릿 모양을 바꿔 깊이를 알 수 있게 한다 */
+.pd-block-bullet-children .pd-block-bullet-dot {
+  font-size: 0.85em;
+  opacity: 0.75;
+}
+
+/* 코드 블록 */
+.pd-block-code {
+  margin: 24px 0;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(2, 6, 23, 0.75);
+  overflow-x: auto;
+}
+
+.pd-block-code code {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  white-space: pre;
+}
+
+/* 콜아웃 */
+.pd-block-callout {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+}
+
+.pd-callout-icon {
+  flex-shrink: 0;
+}
+
+/* 체크리스트 */
+.pd-block-todo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 8px 0 8px 8px;
+}
+
+.pd-block-todo input {
+  margin-top: 5px;
+  accent-color: var(--accent);
+}
+
+.pd-todo-done {
+  color: var(--text-dim);
+  text-decoration: line-through;
+}
+
+/* 토글 */
+.pd-block-toggle {
+  margin: 12px 0;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+}
+
+.pd-block-toggle summary {
+  cursor: pointer;
+  color: var(--text-strong);
+}
+
+.pd-toggle-body {
+  margin-top: 12px;
+}
+
+/* 북마크 */
+.pd-block-bookmark {
+  display: block;
+  margin: 20px 0;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+  font-size: 0.9rem;
+}
+
+.pd-block-bookmark:hover {
+  background: var(--accent-soft);
+}
+
+/* 이미지 */
 .pd-block-image-wrapper {
-  margin: 30px 0;
+  margin: 32px 0;
   text-align: center;
 }
 
 .pd-block-image {
   max-width: 100%;
-  max-height: 550px; /* 창이 넓어져도 사진이 무한정 커지지 않도록 제한 */
+  max-height: 550px;
   width: auto;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   display: block;
   margin: 0 auto;
 }
 
 .pd-block-quote {
-  border-left: 4px solid #94a3b8;
+  border-left: 3px solid var(--accent);
   padding-left: 16px;
-  margin: 20px 0;
-  color: #94a3b8;
+  margin: 24px 0;
+  color: var(--text-muted);
   font-style: italic;
-  font-size: 1.15rem;
 }
 
 .pd-block-divider {
   border: 0;
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border);
   margin: 40px 0;
+}
+
+/* 컬럼 레이아웃 */
+.pd-block-columns {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.pd-block-column {
+  flex: 1;
+  min-width: 0; /* flex 항목이 내용 때문에 넘치지 않도록 */
+}
+
+/* ===== 모바일 ===== */
+@media (max-width: 768px) {
+  .project-detail-page {
+    min-height: calc(100vh - 64px - 200px);
+  }
+
+  .project-detail-inner {
+    margin: 24px auto 60px;
+    width: calc(100% - 24px);
+    padding: 26px 20px;
+    border-radius: var(--radius);
+  }
+
+  .pd-title {
+    font-size: 1.6rem;
+  }
+
+  .pd-block-h1 {
+    font-size: 1.45rem;
+    margin-top: 36px;
+  }
+
+  .pd-block-h2 {
+    font-size: 1.25rem;
+    margin-top: 30px;
+  }
+
+  .pd-block-h3 {
+    font-size: 1.05rem;
+  }
+
+  /* 좁은 화면에서는 컬럼을 위아래로 쌓는다 */
+  .pd-block-columns {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pd-block-image-wrapper {
+    margin: 24px 0;
+  }
 }

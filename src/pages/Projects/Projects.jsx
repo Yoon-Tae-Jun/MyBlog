@@ -31,7 +31,7 @@ function Projects() {
         if (cancelled) return;
         const rawProjects = data["프로젝트"] || {};
 
-        const parsed = Object.entries(rawProjects).map(([id, item], idx) => {
+        const parsed = Object.entries(rawProjects).map(([id, item]) => {
           const tags = item.tag || [];
           const mainTag = tags[0] || "Other"; // 첫 번째 태그를 category처럼 사용
 
