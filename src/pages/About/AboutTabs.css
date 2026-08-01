@@ -94,6 +94,9 @@
   max-width: 220px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  /* 세로로 긴 인물 사진을 정사각형으로 자를 때 가운데를 기준으로 잡으면
+     머리 윗부분이 잘리므로 위쪽을 기준으로 자른다 */
+  object-position: center top;
   display: block;
   border-radius: 9999px;
   border: 1px solid var(--border);
