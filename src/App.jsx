@@ -1,8 +1,9 @@
-import { HashRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import ProjectDetail from "./pages/Projects/ProjectDetail";
 import About from "./pages/About/About";
+import NotFound from "./pages/NotFound/NotFound";
 import NavBar from './componets/NavBar/Navbar';
 import Footer from './componets/Footer/Footer';
 import { ScrollHandler } from './hooks/useScrollNavigation';
@@ -18,6 +19,7 @@ function AnimatedRoutes() {
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/about" element={<Navigate to="/about/intro" replace />} />
         <Route path="/about/:tabId" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
@@ -32,12 +34,12 @@ function App() {
       <div className="stars3"></div>
       <div className="shooting-stars"></div>
       <div className="app-content">
-        <HashRouter>
+        <BrowserRouter>
           <ScrollHandler />
           <NavBar />
           <AnimatedRoutes />
           <Footer />
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </div>
   );

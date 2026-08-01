@@ -18,7 +18,7 @@ function Footer() {
                     <a href="https://tae-jun.tistory.com/" target="_blank" rel="noreferrer">
                         Blog
                     </a>
-                    <a href="https://github.com/Tae-Jun-Yoon" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/Yoon-Tae-Jun" target="_blank" rel="noreferrer">
                         GitHub
                     </a>
                 </div>

@@ -2,18 +2,33 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchContent } from "../../api";
+import { CardSkeleton, ErrorState, EmptyState } from "../../componets/State/State";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import "./Projects.css";
 
 const FILTERS = ["All", "Edge AI", "MLOps", "Web", "Other"];
 
 function Projects() {
   const [projects, setProjects] = useState([]);
+  const [status, setStatus] = useState("loading"); // loading | ready | error
   const [currentFilter, setCurrentFilter] = useState("All");
+  const [reloadKey, setReloadKey] = useState(0);
   const navigate = useNavigate();
 
+  usePageMeta({
+    title: "Projects",
+    description:
+      "Edge AI, 컴퓨터 비전, MLOps 분야에서 진행한 프로젝트 모음입니다.",
+    path: "/projects",
+  });
+
   useEffect(() => {
+    let cancelled = false;
+    setStatus("loading");
+
     fetchContent()
       .then((data) => {
+        if (cancelled) return;
         const rawProjects = data["프로젝트"] || {};
 
         const parsed = Object.entries(rawProjects).map(([id, item], idx) => {
@@ -31,11 +46,18 @@ function Projects() {
         });
 
         setProjects(parsed);
+        setStatus("ready");
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error("프로젝트 로드 실패:", err);
+        setStatus("error");
       });
-  }, []);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [reloadKey]);
 
   const filteredProjects =
     currentFilter === "All"
@@ -69,7 +91,14 @@ function Projects() {
           ))}
         </div>
 
+        {status === "loading" && <CardSkeleton count={6} />}
+
+        {status === "error" && (
+          <ErrorState onRetry={() => setReloadKey((k) => k + 1)} />
+        )}
+
         {/* 프로젝트 카드 리스트 */}
+        {status === "ready" && (
         <div className="projects-grid">
           {filteredProjects.map((project) => (
             <article 
@@ -112,11 +141,10 @@ function Projects() {
           ))}
 
           {filteredProjects.length === 0 && (
-            <div className="empty-state">
-              <p>No projects in this category yet.</p>
-            </div>
+            <EmptyState message="이 분류에는 아직 프로젝트가 없습니다." />
           )}
         </div>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,6 @@
+/* 로딩/에러 상태를 본문과 같은 폭에 맞춰 놓기 위한 래퍼 */
+.about-state-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}

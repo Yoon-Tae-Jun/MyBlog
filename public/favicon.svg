@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#020617"/>
+  <circle cx="14" cy="14" r="1.6" fill="#ffffff" opacity=".7"/>
+  <circle cx="52" cy="20" r="1.2" fill="#ffffff" opacity=".5"/>
+  <circle cx="46" cy="49" r="1.4" fill="#ffffff" opacity=".6"/>
+  <text x="32" y="43" font-family="Inter, Helvetica, Arial, sans-serif" font-size="30"
+        font-weight="700" fill="#3ea8ff" text-anchor="middle">TJ</text>
+</svg>

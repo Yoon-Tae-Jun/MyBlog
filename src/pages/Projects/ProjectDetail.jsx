@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchContent, imageUrl } from "../../api";
+import { TextSkeleton, ErrorState } from "../../componets/State/State";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import "./ProjectDetail.css";
 
 function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [status, setStatus] = useState("loading"); // loading | ready | error
+  const [reloadKey, setReloadKey] = useState(0);
+
+  usePageMeta({
+    title: project?.title,
+    description: project?.description,
+    path: `/projects/${id}`,
+  });
 
   useEffect(() => {
+    let cancelled = false;
+    setStatus("loading");
+
     fetchContent()
       .then((data) => {
+        if (cancelled) return;
         const rawProjects = data["프로젝트"] || {};
         if (rawProjects[id]) {
           const item = rawProjects[id];
@@ -24,21 +37,56 @@ function ProjectDetail() {
             status: item.status,
             blocks: item.blocks || [],
           });
+        } else {
+          setProject(null);
         }
-        setLoading(false);
+        setStatus("ready");
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error("프로젝트 상세 로드 실패:", err);
-        setLoading(false);
+        setStatus("error");
       });
-  }, [id]);
 
-  if (loading) {
-    return <div className="project-detail-page"><div className="project-detail-inner">Loading...</div></div>;
+    return () => {
+      cancelled = true;
+    };
+  }, [id, reloadKey]);
+
+  if (status === "loading") {
+    return (
+      <div className="project-detail-page">
+        <div className="project-detail-inner">
+          <TextSkeleton lines={8} />
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <div className="project-detail-page">
+        <div className="project-detail-inner">
+          <ErrorState onRetry={() => setReloadKey((k) => k + 1)} />
+        </div>
+      </div>
+    );
   }
 
   if (!project) {
-    return <div className="project-detail-page"><div className="project-detail-inner">Project not found.</div></div>;
+    return (
+      <div className="project-detail-page">
+        <div className="project-detail-inner">
+          <div className="state-box">
+            <p className="state-title">프로젝트를 찾을 수 없습니다</p>
+            <p className="state-desc">주소가 바뀌었거나 삭제된 프로젝트입니다.</p>
+            <button className="state-button" onClick={() => navigate("/projects")}>
+              프로젝트 목록으로
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
