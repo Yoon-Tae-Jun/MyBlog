@@ -41,6 +41,9 @@
   --code-bg: #f8fafc;
   --code-text: #334155;
 
+  /* 이미지 뒤 바탕 — 투명 PNG가 테마와 무관하게 읽히도록 두 테마 모두 흰색 */
+  --image-bg: #ffffff;
+
   /* 모양 */
   --radius-sm: 10px;
   --radius: 14px;

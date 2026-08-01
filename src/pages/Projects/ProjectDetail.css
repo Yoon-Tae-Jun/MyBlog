@@ -264,11 +264,13 @@
   max-height: 550px;
   width: auto;
   object-fit: contain;
-  border-radius: var(--radius-sm);
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
   display: block;
   margin: 0 auto;
+  /* 배경이 투명한 PNG(다이어그램 등)는 검은 글씨가 다크 테마에서 묻히므로
+     이미지 뒤에 항상 흰 바탕을 깔아 둔다. 불투명한 사진에는 영향이 없다. */
+  background-color: var(--image-bg);
 }
 
 .pd-block-quote {
