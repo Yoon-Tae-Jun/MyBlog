@@ -223,12 +223,32 @@ function renderIntroBlock(block) {
 
 import { FiDownload } from "react-icons/fi";
 
+/** 노션에 한글/영문 두 표기로 들어가 있어 둘 다 본인으로 인식한다. */
+const MY_NAMES = ["윤태준", "Tae-Jun Yoon"];
+
+const isMe = (name) =>
+  MY_NAMES.some((n) => n.toLowerCase() === name.trim().toLowerCase());
+
+/** 저자 목록에서 본인 이름만 굵게 표시한다. */
+function AuthorList({ authors = [] }) {
+  return (
+    <span>
+      {authors.map((name, i) => (
+        <React.Fragment key={`${name}-${i}`}>
+          {i > 0 && ", "}
+          {isMe(name) ? <strong className="author-me">{name}</strong> : name}
+        </React.Fragment>
+      ))}
+    </span>
+  );
+}
+
 function PaperCard({ item }) {
   return (
     <div className="paper-card-content">
       <div className="paper-card-text">
         <strong>{item.paperName}</strong> <br />
-        <span>{item.author.join(", ")}</span> <br />
+        <AuthorList authors={item.author} /> <br />
         <span>{item.conferenceName}</span>, &nbsp;
         <span>{item.date}</span> <br />
       </div>

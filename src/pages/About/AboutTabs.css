@@ -35,6 +35,12 @@
   gap: 16px;
 }
 
+/* 저자 목록에서 본인 이름만 강조 */
+.author-me {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
 .paper-download-link {
   display: inline-flex;
   align-items: center;
