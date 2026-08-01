@@ -300,9 +300,39 @@ body {
   z-index: 1;
 }
 
-/* 페이지 전환 페이드 인 애니메이션 */
-.page-fade-in {
-  animation: fadeInDown 0.6s ease-out forwards;
+/* ==========================================================
+   페이지 전환
+   지원 브라우저에서는 View Transitions API가 이전/이후 화면을
+   직접 크로스페이드한다. 아래 마운트 애니메이션은 미지원
+   브라우저(.no-vt)에서만 대체 수단으로 재생한다.
+   ========================================================== */
+.no-vt .page-fade-in {
+  animation: fadeInDown 0.45s ease-out forwards;
+}
+
+::view-transition-old(root) {
+  animation: vt-fade-out 200ms ease-in both;
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in 320ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInDown {
@@ -324,7 +354,9 @@ body {
   .stars3,
   .shooting-stars::before,
   .shooting-stars::after,
-  .page-fade-in {
+  .page-fade-in,
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
     animation: none;
   }
 

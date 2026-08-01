@@ -38,14 +38,18 @@ const NavBar = () => {
         {item.label}
       </a>
     ) : (
-      <Link to={item.to} className={`nav-a ${isActive(item.to) ? "active" : ""}`}>
+      <Link
+        to={item.to}
+        viewTransition
+        className={`nav-a ${isActive(item.to) ? "active" : ""}`}
+      >
         {item.label}
       </Link>
     );
 
   return (
     <nav className="nav-container">
-      <Link to="/" className="nav-logo-text">
+      <Link to="/" viewTransition className="nav-logo-text">
         TJ Blog
       </Link>
 

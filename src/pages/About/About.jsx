@@ -5,44 +5,19 @@ import SubNavBar from '../../componets/SubNavBar/SubNavBar';
 import { fetchContent } from '../../api';
 import { TextSkeleton, ErrorState } from '../../componets/State/State';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { ABOUT_TABS } from '../../config/navigation';
 import './About.css';
 
-// URL 경로(tabId)와 실제 탭 이름 간의 매핑
-const TAB_MAPPING = {
-  "intro": "자기소개",
-  "paper": "논문",
-  "award": "수상경력",
-  //"cert": "자격증"
-};
-const REVERSE_TAB_MAPPING = {
-  "자기소개": "intro",
-  "논문": "paper",
-  "수상경력": "award",
-  //"자격증": "cert"
-};
-
-/* 추후 자격증 추가 */
-const projectTabs = ["자기소개", "논문", "수상경력"];
+// 탭 정의는 config/navigation.js 한 곳에서 가져온다.
+// (스크롤 이동 순서와 어긋나지 않게 하기 위함)
+const TAB_MAPPING = Object.fromEntries(ABOUT_TABS.map((t) => [t.id, t.name]));
+const REVERSE_TAB_MAPPING = Object.fromEntries(ABOUT_TABS.map((t) => [t.name, t.id]));
+const projectTabs = ABOUT_TABS.map((t) => t.name);
 
 // 탭별 검색 노출용 문구
-const TAB_META = {
-  "자기소개": {
-    title: "소개",
-    description: "Edge AI와 컴퓨터 비전을 연구하는 윤태준을 소개합니다.",
-  },
-  "논문": {
-    title: "논문",
-    description: "윤태준이 참여한 학회 논문과 발표 자료 목록입니다.",
-  },
-  "수상경력": {
-    title: "수상경력",
-    description: "윤태준의 공모전 및 경진대회 수상 내역입니다.",
-  },
-  "자격증": {
-    title: "자격증",
-    description: "윤태준이 취득한 자격증 목록입니다.",
-  },
-};
+const TAB_META = Object.fromEntries(
+  ABOUT_TABS.map((t) => [t.name, { title: t.title, description: t.description }])
+);
 
 // 날짜 문자열을 Date 객체로 변환 (YYYY.MM.DD 또는 YYYY.MM 형식)
 const parseDate = (dateStr) => {
@@ -132,7 +107,7 @@ function About() {
   const handleTabChange = (newTabName) => {
     const routeId = REVERSE_TAB_MAPPING[newTabName];
     if (routeId) {
-      navigate(`/about/${routeId}`);
+      navigate(`/about/${routeId}`, { viewTransition: true });
     }
   };
 

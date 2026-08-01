@@ -71,6 +71,10 @@
           document
             .querySelector('meta[name="theme-color"]')
             .setAttribute("content", theme === "dark" ? "#0b1120" : "#fbfcfe");
+          // View Transitions 미지원 브라우저에는 대체 전환 애니메이션을 쓴다
+          if (!document.startViewTransition) {
+            document.documentElement.classList.add("no-vt");
+          }
         } catch (e) {}
       })();
     </script>
