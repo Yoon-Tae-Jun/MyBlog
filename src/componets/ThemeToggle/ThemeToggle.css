@@ -19,3 +19,17 @@
   border-color: var(--border-strong);
   background: var(--surface-subtle);
 }
+
+/* 모바일에서는 손가락으로 누르는 크기(44px)에 맞추고,
+   햄버거와 나란히 서도록 테두리를 빼서 시각적 무게를 맞춘다 */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-color: transparent;
+  }
+
+  .theme-toggle:hover {
+    border-color: transparent;
+  }
+}

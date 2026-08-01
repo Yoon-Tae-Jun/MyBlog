@@ -53,28 +53,30 @@ const NavBar = () => {
         TJ Blog
       </Link>
 
-      {/* 데스크톱 메뉴 */}
       <div className="nav-right">
+        {/* 데스크톱 메뉴 */}
         <ul className="nav-ul">
           {menuItems.map((item) => (
             <li key={item.label}>{renderItem(item)}</li>
           ))}
         </ul>
-        <ThemeToggle />
-      </div>
 
-      {/* 모바일 토글 */}
-      <button
-        type="button"
-        className={`nav-toggle ${open ? "is-open" : ""}`}
-        onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
-        aria-expanded={open}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+        {/* 테마 버튼과 햄버거는 항상 한 덩어리로 붙여 둔다 */}
+        <div className="nav-actions">
+          <ThemeToggle />
+          <button
+            type="button"
+            className={`nav-toggle ${open ? "is-open" : ""}`}
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={open}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
 
       {/* 모바일 드로어 */}
       <div className={`nav-drawer ${open ? "is-open" : ""}`}>

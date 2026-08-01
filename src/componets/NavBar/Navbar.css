@@ -32,6 +32,13 @@
   gap: 28px;
 }
 
+/* 테마 버튼 + 햄버거 묶음 */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .nav-ul {
   display: flex;
   align-items: center;
@@ -117,7 +124,10 @@
 @media (max-width: 768px) {
   .nav-container {
     height: 64px;
-    padding: 0 18px;
+    /* 햄버거는 시각적 여백이 이미 있어 오른쪽 패딩을 조금 줄인다 */
+    padding: 0 12px 0 18px;
+    /* 좁은 화면에서 로고가 눌리지 않도록 기본 gap(40px)을 줄인다 */
+    gap: 12px;
   }
 
   .nav-logo-text {
@@ -126,12 +136,6 @@
 
   .nav-ul {
     display: none;
-  }
-
-  /* 메뉴는 접히지만 테마 버튼은 햄버거 옆에 남긴다 */
-  .nav-right {
-    gap: 0;
-    margin-left: auto;
   }
 
   .nav-toggle {
