@@ -24,7 +24,7 @@
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #ffffff;
+  border-right: 2px solid var(--text-strong);
 
   /* 1) 타이핑: 3초 동안 42ch까지 찍고 멈춤
      2) caret: 3초 동안만 깜빡이다가 투명 상태로 고정 */
@@ -49,7 +49,7 @@
 
   0%,
   70% {
-    border-right-color: #ffffff;
+    border-right-color: var(--text-strong);
   }
 
   /* 중간까지는 보이고 */

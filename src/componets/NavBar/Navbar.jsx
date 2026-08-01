@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Navbar.css";
 
 const menuItems = [
@@ -49,11 +50,14 @@ const NavBar = () => {
       </Link>
 
       {/* 데스크톱 메뉴 */}
-      <ul className="nav-ul">
-        {menuItems.map((item) => (
-          <li key={item.label}>{renderItem(item)}</li>
-        ))}
-      </ul>
+      <div className="nav-right">
+        <ul className="nav-ul">
+          {menuItems.map((item) => (
+            <li key={item.label}>{renderItem(item)}</li>
+          ))}
+        </ul>
+        <ThemeToggle />
+      </div>
 
       {/* 모바일 토글 */}
       <button

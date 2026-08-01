@@ -1,7 +1,7 @@
 .footer-container {
     width: 100%;
     padding: 40px 20px 32px;
-    background-color: rgba(5, 11, 35, 0.6);
+    background-color: var(--surface-subtle);
     color: var(--text-dim);
     text-align: center;
     font-size: 0.875rem;

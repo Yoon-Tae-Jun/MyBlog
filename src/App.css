@@ -1,30 +1,52 @@
+/* ==========================================================
+   라이트 테마 (기본)
+   색 이름 대신 역할로 두어 테마를 바꿔도 컴포넌트는 그대로 둔다.
+   ========================================================== */
 :root {
   /* 배경 / 표면 */
-  --bg: #020617;
-  --surface: rgba(15, 23, 42, 0.72);
-  --surface-hover: rgba(15, 23, 42, 0.92);
-  --surface-subtle: rgba(255, 255, 255, 0.03);
+  --bg: #fbfcfe;
+  --surface: #ffffff;
+  --surface-hover: #ffffff;
+  --surface-subtle: #f1f5f9;
 
   /* 테두리 */
-  --border: rgba(148, 163, 184, 0.22);
-  --border-strong: rgba(148, 163, 184, 0.4);
+  --border: #e4e9f0;
+  --border-strong: #cbd5e1;
 
-  /* 강조색 (하나로 통일) */
-  --accent: #3ea8ff;
-  --accent-soft: rgba(62, 168, 255, 0.14);
-  --accent-border: rgba(62, 168, 255, 0.5);
+  /* 강조색 — 인디고 (흰 배경에서 명암비 6.3:1, 본문 기준 통과) */
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-soft: rgba(79, 70, 229, 0.08);
+  --accent-border: rgba(79, 70, 229, 0.35);
+  --on-accent: #ffffff;
 
   /* 글자 */
-  --text-strong: #f8fafc;
-  --text: #dbe3ee;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --text-strong: #0f172a;
+  --text: #334155;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+
+  /* 상태 뱃지 */
+  --ok-bg: #dcfce7;
+  --ok-text: #15803d;
+  --ok-border: #86efac;
+  --info-bg: #dbeafe;
+  --info-text: #1d4ed8;
+  --info-border: #93c5fd;
+  --warn-bg: #fce7f3;
+  --warn-text: #be185d;
+  --warn-border: #f9a8d4;
+
+  /* 코드 */
+  --code-bg: #f8fafc;
+  --code-text: #334155;
 
   /* 모양 */
   --radius-sm: 10px;
   --radius: 14px;
   --radius-lg: 18px;
-  --shadow: 0 18px 45px rgba(2, 6, 23, 0.55);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 2px 4px rgba(15, 23, 42, 0.06), 0 12px 32px rgba(15, 23, 42, 0.1);
 
   /* 레이아웃 */
   --maxw: 1120px;
@@ -34,6 +56,48 @@
   --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
     "Segoe UI", "Noto Sans KR", "Malgun Gothic", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ==========================================================
+   다크 테마
+   배경을 순검정 대신 살짝 띄워 표면과의 명도 차를 확보한다.
+   ========================================================== */
+:root[data-theme="dark"] {
+  --bg: #0b1120;
+  --surface: #141d33;
+  --surface-hover: #1a2542;
+  --surface-subtle: rgba(255, 255, 255, 0.04);
+
+  --border: rgba(148, 163, 184, 0.18);
+  --border-strong: rgba(148, 163, 184, 0.35);
+
+  /* 어두운 배경에서는 밝은 인디고로 (명암비 6.3:1) */
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-soft: rgba(129, 140, 248, 0.14);
+  --accent-border: rgba(129, 140, 248, 0.45);
+  --on-accent: #0b1120;
+
+  --text-strong: #f1f5f9;
+  --text: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --ok-bg: rgba(22, 163, 74, 0.16);
+  --ok-text: #86efac;
+  --ok-border: rgba(34, 197, 94, 0.4);
+  --info-bg: rgba(37, 99, 235, 0.16);
+  --info-text: #93c5fd;
+  --info-border: rgba(59, 130, 246, 0.4);
+  --warn-bg: rgba(219, 39, 119, 0.16);
+  --warn-text: #f9a8d4;
+  --warn-border: rgba(244, 114, 182, 0.4);
+
+  --code-bg: rgba(2, 6, 23, 0.6);
+  --code-text: #e2e8f0;
+
+  --shadow: 0 18px 45px rgba(2, 6, 23, 0.5);
+  --shadow-hover: 0 22px 55px rgba(2, 6, 23, 0.65);
 }
 
 * {
@@ -59,13 +123,38 @@ body {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: #020617;
+  background: var(--bg);
+  transition: background 0.25s ease;
 }
 
-/* 공통: 별 레이어 기본 스타일 */
+/* 라이트 테마에서는 밤하늘 대신 아주 옅은 그라데이션만 둔다 */
+.app-root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 500px at 12% -5%, rgba(79, 70, 229, 0.07), transparent 70%),
+    radial-gradient(700px 400px at 95% 8%, rgba(14, 165, 233, 0.05), transparent 70%);
+}
+
+:root[data-theme="dark"] .app-root::before {
+  display: none;
+}
+
+/* 공통: 별 레이어 기본 스타일 — 다크 테마에서만 보인다 */
 .stars,
 .stars2,
-.stars3 {
+.stars3,
+.shooting-stars {
+  display: none;
+}
+
+:root[data-theme="dark"] .stars,
+:root[data-theme="dark"] .stars2,
+:root[data-theme="dark"] .stars3 {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -75,6 +164,12 @@ body {
   background: transparent;
   z-index: 0;
   pointer-events: none;
+  /* 본문을 읽을 때 시선이 분산되지 않도록 눌러 둔다 */
+  opacity: 0.55;
+}
+
+:root[data-theme="dark"] .shooting-stars {
+  display: block;
 }
 
 /* 별 1 (가장 작고 많은 별) — 넓은 모니터에서도 오른쪽이 비지 않도록 2560px까지 배치 */

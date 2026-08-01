@@ -5,22 +5,17 @@
 }
 
 .project-detail-inner {
-  margin: 40px auto 80px;
-  max-width: 860px; /* 글줄이 너무 길어지지 않는 폭 */
-  width: calc(100% - 40px);
-  padding: 48px;
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
+  margin: 48px auto 96px;
+  max-width: 760px; /* 글줄이 너무 길어지지 않는 폭 */
+  width: 100%;
+  padding: 0 24px;
 }
 
 .pd-back-btn {
-  background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border);
   padding: 8px 16px;
+  background: var(--surface);
   border-radius: 999px;
   font-family: inherit;
   font-size: 0.88rem;
@@ -32,7 +27,7 @@
 .pd-back-btn:hover {
   color: var(--text-strong);
   border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface-subtle);
 }
 
 .pd-header {
@@ -57,28 +52,33 @@
 }
 
 .pd-meta-tag {
-  background: rgba(148, 163, 184, 0.1);
-  color: #cbd5e1;
+  background: var(--surface-subtle);
+  color: var(--text-muted);
   padding: 4px 10px;
   border-radius: 6px;
   font-size: 0.82rem;
 }
 
 .pd-status-badge {
-  color: #050b23;
   padding: 4px 10px;
   border-radius: 6px;
   font-size: 0.82rem;
   font-weight: 600;
-  background-color: #fef08a;
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-text);
 }
 
 .pd-status-badge.status-completed {
-  background-color: #86efac;
+  border-color: var(--ok-border);
+  background: var(--ok-bg);
+  color: var(--ok-text);
 }
 
 .pd-status-badge.status-in-progress {
-  background-color: #93c5fd;
+  border-color: var(--info-border);
+  background: var(--info-bg);
+  color: var(--info-text);
 }
 
 .pd-content {
@@ -109,7 +109,7 @@
   font-size: 1.15rem;
   font-weight: 600;
   margin: 28px 0 10px;
-  color: #bae6fd;
+  color: var(--accent);
 }
 
 /* 첫 제목 위에는 큰 여백이 필요 없다 */
@@ -134,8 +134,8 @@
   font-size: 0.88em;
   padding: 2px 6px;
   border-radius: 5px;
-  background: rgba(148, 163, 184, 0.16);
-  color: #e2e8f0;
+  background: var(--surface-subtle);
+  color: var(--code-text);
 }
 
 /* 리스트 */
@@ -173,7 +173,7 @@
   padding: 18px 20px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: rgba(2, 6, 23, 0.75);
+  background: var(--code-bg);
   overflow-x: auto;
 }
 
@@ -181,7 +181,7 @@
   font-family: var(--font-mono);
   font-size: 0.86rem;
   line-height: 1.6;
-  color: #e2e8f0;
+  color: var(--code-text);
   white-space: pre;
 }
 
@@ -265,7 +265,8 @@
   width: auto;
   object-fit: contain;
   border-radius: var(--radius-sm);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
   display: block;
   margin: 0 auto;
 }
@@ -304,10 +305,8 @@
   }
 
   .project-detail-inner {
-    margin: 24px auto 60px;
-    width: calc(100% - 24px);
-    padding: 26px 20px;
-    border-radius: var(--radius);
+    margin: 28px auto 64px;
+    padding: 0 18px;
   }
 
   .pd-title {

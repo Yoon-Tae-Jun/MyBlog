@@ -14,7 +14,7 @@
 .nav-logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-strong);
   text-decoration: none;
   letter-spacing: -0.02em;
   white-space: nowrap;
@@ -22,14 +22,20 @@
 }
 
 .nav-logo-text:hover {
-  color: #3ea8ff;
+  color: var(--accent);
 }
 
 /* 데스크톱 메뉴 */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
 .nav-ul {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -37,7 +43,7 @@
 
 .nav-a {
   position: relative;
-  color: #cbd5e1;
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 0.98rem;
   padding-bottom: 4px;
@@ -45,11 +51,11 @@
 }
 
 .nav-a:hover {
-  color: #fff;
+  color: var(--text-strong);
 }
 
 .nav-a.active {
-  color: #3ea8ff;
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -62,7 +68,7 @@
   bottom: 0;
   height: 2px;
   border-radius: 2px;
-  background: #3ea8ff;
+  background: var(--accent);
 }
 
 /* 햄버거 버튼 (모바일 전용) */
@@ -85,7 +91,7 @@
   height: 2px;
   margin: 0 auto;
   border-radius: 2px;
-  background: #e2e8f0;
+  background: var(--text);
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
@@ -122,6 +128,12 @@
     display: none;
   }
 
+  /* 메뉴는 접히지만 테마 버튼은 햄버거 옆에 남긴다 */
+  .nav-right {
+    gap: 0;
+    margin-left: auto;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -131,7 +143,7 @@
     position: fixed;
     inset: 64px 0 0;
     z-index: 50;
-    background: rgba(2, 6, 23, 0.97);
+    background: var(--bg);
     backdrop-filter: blur(8px);
     /* 닫힌 상태에서는 클릭을 막고 살짝 위로 밀어둔다 */
     opacity: 0;
@@ -159,7 +171,7 @@
     display: block;
     padding: 16px 6px;
     font-size: 1.15rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--border);
   }
 
   .nav-drawer-ul .nav-a.active::after {
