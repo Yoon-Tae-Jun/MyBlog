@@ -1,6 +1,7 @@
 // src/pages/Projects/Projects.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchContent } from "../../api";
 import "./Projects.css";
 
 const FILTERS = ["All", "Edge AI", "MLOps", "Web", "Other"];
@@ -11,9 +12,7 @@ function Projects() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // public/db.json 은 /db.json 으로 접근 가능
-    fetch(`${import.meta.env.BASE_URL}db.json`)
-      .then((res) => res.json())
+    fetchContent()
       .then((data) => {
         const rawProjects = data["프로젝트"] || {};
 
@@ -34,7 +33,7 @@ function Projects() {
         setProjects(parsed);
       })
       .catch((err) => {
-        console.error("db.json 로드 실패:", err);
+        console.error("프로젝트 로드 실패:", err);
       });
   }, []);
 

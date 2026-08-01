@@ -1,4 +1,5 @@
 import React from "react";
+import { imageUrl, paperUrl } from '../../api';
 import './AboutTabs.css';
 function AboutTabs({ data, tab }) {
   if (tab === "자기소개") {
@@ -152,7 +153,7 @@ function renderIntroBlock(block) {
       <div key={block.id} className="intro-image-wrapper">
         <img
           className="intro-image"
-          src={`${import.meta.env.BASE_URL}page_img/${encodeURIComponent(name)}`}
+          src={imageUrl(name)}
           alt=""
         />
       </div>
@@ -233,7 +234,7 @@ function PaperCard({ item }) {
       </div>
       <a
         className="paper-download-link"
-        href={`${import.meta.env.BASE_URL}/papers/${encodeURIComponent(item.file)}`}
+        href={paperUrl(item.file)}
         download
       >
         <FiDownload className="download-icon" />

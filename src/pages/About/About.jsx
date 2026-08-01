@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import AboutTabs from './AboutTabs';
 import SubNavBar from '../../componets/SubNavBar/SubNavBar';
+import { fetchContent } from '../../api';
 
 // URL 경로(tabId)와 실제 탭 이름 간의 매핑
 const TAB_MAPPING = {
@@ -53,8 +54,7 @@ function About() {
   }, [tabId, navigate]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}db.json`)
-      .then((res) => res.json())
+    fetchContent()
       .then((json) => {
         const sorted = {};
 

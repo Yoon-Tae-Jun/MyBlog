@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { fetchContent, imageUrl } from "../../api";
 import "./ProjectDetail.css";
 
 function ProjectDetail() {
@@ -9,8 +10,7 @@ function ProjectDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}db.json`)
-      .then((res) => res.json())
+    fetchContent()
       .then((data) => {
         const rawProjects = data["프로젝트"] || {};
         if (rawProjects[id]) {
@@ -28,7 +28,7 @@ function ProjectDetail() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("db.json 로드 실패:", err);
+        console.error("프로젝트 상세 로드 실패:", err);
         setLoading(false);
       });
   }, [id]);
@@ -153,7 +153,7 @@ function renderBlock(block) {
       <div key={block.id} className="pd-block-image-wrapper">
         <img
           className="pd-block-image"
-          src={`${import.meta.env.BASE_URL}page_img/${encodeURIComponent(name)}`}
+          src={imageUrl(name)}
           alt=""
         />
       </div>
