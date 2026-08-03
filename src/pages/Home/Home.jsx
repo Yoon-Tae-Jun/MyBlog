@@ -461,8 +461,8 @@ function Home() {
         <div className="home-section-inner" data-reveal>
           <p className="hs-eyebrow">Contact</p>
           <h2 className="home-contact-title" id="contact-title">
-            <a className="home-contact-mail" href="mailto:xmstlf1234@gmail.com">
-              xmstlf1234@gmail.com
+            <a className="home-contact-mail" href="mailto:yytaejun@gmail.com">
+              yytaejun@gmail.com
             </a>
           </h2>
 

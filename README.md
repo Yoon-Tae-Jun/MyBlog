@@ -78,6 +78,6 @@ npm run build
 
 ## 연락처
 
-- 이메일: xmstlf1234@gmail.com
+- 이메일: yytaejun@gmail.com
 - GitHub: https://github.com/Yoon-Tae-Jun
 - 블로그: https://tae-jun.tistory.com/
