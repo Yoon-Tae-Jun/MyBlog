@@ -1,10 +1,34 @@
+/* 화면 위에 계속 붙어 있는 바.
+   본문이 아래를 지나가므로, 스크롤이 시작되면 배경을 깔아 글자를 지켜 준다. */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  /* blur는 전환 대상에서 뺀다. 매 프레임 다시 흐리게 그리느라
+     스크롤이 무겁게 끌리는 느낌을 준다. */
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-bar.is-scrolled {
+  /* color-mix를 모르는 브라우저에서는 불투명 배경으로 떨어진다 */
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--border);
+}
+
 .nav-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  height: 80px;
+  height: var(--nav-h);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
@@ -123,7 +147,7 @@
 /* ========================= */
 @media (max-width: 768px) {
   .nav-container {
-    height: 64px;
+    height: var(--nav-h);
     /* 햄버거는 시각적 여백이 이미 있어 오른쪽 패딩을 조금 줄인다 */
     padding: 0 12px 0 18px;
     /* 좁은 화면에서 로고가 눌리지 않도록 기본 gap(40px)을 줄인다 */
@@ -145,7 +169,7 @@
   .nav-drawer {
     display: block;
     position: fixed;
-    inset: 64px 0 0;
+    inset: var(--nav-h) 0 0;
     z-index: 50;
     background: var(--bg);
     backdrop-filter: blur(8px);

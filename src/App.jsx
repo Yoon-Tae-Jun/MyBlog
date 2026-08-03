@@ -6,7 +6,7 @@ import About from "./pages/About/About";
 import NotFound from "./pages/NotFound/NotFound";
 import NavBar from './componets/NavBar/Navbar';
 import Footer from './componets/Footer/Footer';
-import { ScrollHandler } from './hooks/useScrollNavigation';
+import { ScrollHandler } from './hooks/useScrollToTop';
 import "./App.css";
 
 function AnimatedRoutes() {

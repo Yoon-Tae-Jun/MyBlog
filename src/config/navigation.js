@@ -1,9 +1,6 @@
 /**
- * 소개 탭과 스크롤 이동 순서의 단일 출처.
- *
- * 예전에는 About.jsx의 탭 목록과 스크롤 경로 목록이 따로 있어서,
- * 자격증 탭을 주석 처리했을 때 스크롤만 /about/cert 로 이동해
- * 곧바로 /about/intro 로 튕기는 문제가 있었다. 여기서만 관리한다.
+ * 소개 탭의 단일 출처.
+ * About.jsx의 탭 목록과 검색 노출 문구를 여기서만 관리한다.
  */
 export const ABOUT_TABS = [
   {
@@ -31,11 +28,4 @@ export const ABOUT_TABS = [
   //   title: "자격증",
   //   description: "윤태준이 취득한 자격증 목록입니다.",
   // },
-];
-
-/** 휠 스크롤로 오갈 수 있는 페이지 순서 */
-export const SCROLL_ROUTES = [
-  "/",
-  ...ABOUT_TABS.map((t) => `/about/${t.id}`),
-  "/projects",
 ];

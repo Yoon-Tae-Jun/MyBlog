@@ -103,6 +103,14 @@
   --shadow-hover: 0 22px 55px rgba(2, 6, 23, 0.65);
 }
 
+/* 좁은 화면에서는 nav가 낮아진다. 높이를 토큰 한 곳에서 관리해
+   고정 nav의 여백·드로어 위치가 저절로 따라오게 한다. */
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 64px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -125,7 +133,9 @@ body {
 .app-root {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  /* clip은 hidden과 달리 스크롤 컨테이너를 만들지 않는다.
+     hidden으로 두면 홈의 구역 스냅이 페이지가 아닌 이 요소에 걸려 동작하지 않는다. */
+  overflow-x: clip;
   background: var(--bg);
   transition: background 0.25s ease;
 }
@@ -294,11 +304,24 @@ body {
   }
 }
 
-/* 내용은 항상 별 위에 올라오도록 */
+/* 내용은 항상 별 위에 올라오도록.
+   nav가 화면에 고정되어 흐름에서 빠졌으므로 그 높이만큼 자리를 비워 둔다. */
 .app-content {
   position: relative;
   z-index: 1;
+  padding-top: var(--nav-h);
 }
+
+/* 구역·앵커로 스크롤할 때 고정 nav 뒤로 숨지 않게 한다.
+   여기 한 곳에서만 nav 높이를 빼야 한다. scroll-margin까지 함께 주면
+   두 번 밀려 구역이 nav 아래로 한 칸 더 내려가 앉는다. */
+html {
+  scroll-padding-top: var(--nav-h);
+}
+
+/* 구역 단위 이동은 CSS scroll-snap 대신 useSectionScroll이 직접 그린다.
+   mandatory 스냅은 이동 곡선을 브라우저가 정해 뚝 끊기고, 코드로 스크롤을
+   움직이는 다른 동작(메뉴 이동, 페이지 전환)과 서로 잡아당겼다. */
 
 /* ==========================================================
    페이지 전환

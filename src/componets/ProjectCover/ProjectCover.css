@@ -1,0 +1,85 @@
+.project-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* 투명 PNG가 테마와 무관하게 읽히도록 흰 바탕을 깔아 둔다 */
+  background: var(--image-bg);
+}
+
+.project-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================
+   이미지가 없는 프로젝트용 생성 커버
+   ========================================================== */
+.cover-gen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--cover-h1) 62% 58%) 0%,
+    hsl(var(--cover-h2) 58% 42%) 100%
+  );
+}
+
+:root[data-theme="dark"] .cover-gen {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--cover-h1) 52% 42%) 0%,
+    hsl(var(--cover-h2) 48% 26%) 100%
+  );
+}
+
+/* 격자 무늬 — 그라데이션만 있으면 밋밋해서 결을 하나 얹는다 */
+.cover-gen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+}
+
+/* 위쪽을 살짝 눌러 라벨이 항상 읽히게 한다 */
+.cover-gen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.4), transparent 55%);
+}
+
+.cover-gen-ring {
+  position: absolute;
+  left: var(--cover-x);
+  top: var(--cover-y);
+  width: 52%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  transform: translate(-50%, -50%);
+}
+
+.cover-gen-ring-2 {
+  width: 82%;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.cover-gen-label {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}

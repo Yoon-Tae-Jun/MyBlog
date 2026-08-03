@@ -1,20 +1,43 @@
 .home-container {
+  color: var(--text-strong);
+}
+
+/* ==========================================================
+   구역 공통
+   한 구역이 화면 하나를 채운다. 구역 단위 이동은 useSectionScroll이 맡는다.
+   ========================================================== */
+.home-section {
+  min-height: calc(100vh - var(--nav-h));
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  color: var(--text-strong);
-  min-height: calc(100vh - var(--nav-h));
+  padding: 32px 0;
+}
+
+.home-section-inner {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
   padding: 0 24px;
+  text-align: left;
+}
+
+/* ==========================================================
+   히어로
+   ========================================================== */
+.home-hero {
+  position: relative;
+  align-items: center;
+  padding: 32px 24px;
   text-align: center;
 }
 
 .home-title {
-  font-size: clamp(1.6rem, 4.2vw, 3rem);
+  font-size: clamp(1.6rem, 4vw, 2.9rem);
   font-weight: 600;
   color: var(--text-strong);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
   letter-spacing: -0.02em;
   opacity: 0.95;
 }
@@ -25,11 +48,12 @@
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid var(--text-strong);
+  vertical-align: bottom;
 
-  /* 1) 타이핑: 3초 동안 42ch까지 찍고 멈춤
-     2) caret: 3초 동안만 깜빡이다가 투명 상태로 고정 */
-  animation: typing 3s steps(40, end) forwards,
-    caret 3s step-end forwards;
+  /* 1) 타이핑: 1.4초 동안 37ch까지 찍고 멈춤
+     2) caret: 같은 시간 동안만 깜빡이다가 투명 상태로 고정 */
+  animation: typing 1.4s steps(42, end) forwards,
+    caret 1.4s step-end forwards;
 }
 
 @keyframes typing {
@@ -38,10 +62,11 @@
   }
 
   to {
-    width: 42ch;
+    width: 37ch;
   }
 
-  /* 문장 길이에 맞게 조절 */
+  /* 문구를 바꾸면 글자 수에 맞춰 이 값과 steps()도 함께 조절한다
+     (지금 문구는 42자, 폭은 대략 글자 수의 0.875배) */
 }
 
 /* 커서: 타이핑 중엔 보이다가, 끝날 때 투명해진 상태로 멈춤 */
@@ -63,16 +88,16 @@
 
 /* 타이핑 끝난 뒤 자연스럽게 나타나는 interest 텍스트 */
 .home-interest {
-  margin-top: 0.6rem;
+  margin: 0.6rem 0 0;
   color: var(--text-muted);
   font-weight: 400;
   font-size: clamp(1rem, 2vw, 1.5rem);
   letter-spacing: 0.02em;
 
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 3.1s;
-  /* 타이핑(3s) 끝나고 조금 쉬고 등장 */
+  animation: fadeInUp 0.7s ease-out forwards;
+  animation-delay: 1.5s;
+  /* 타이핑(1.4s) 끝나고 곧바로 등장 */
 }
 
 @keyframes fadeInUp {
@@ -87,10 +112,542 @@
   }
 }
 
-/* 반응형 모바일 대응: 타이핑 애니메이션은 한 줄을 전제로 하므로 끄고 페이드로 대체 */
+/* 아래에 더 볼 것이 있다는 신호 — 조금만 내려도 접힌다 */
+.home-scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+  animation-delay: 2s;
+  transition: opacity 0.35s ease;
+}
+
+.home-hero.is-scrolled .home-scroll-cue {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-scroll-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.home-scroll-line {
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(to bottom, var(--border-strong), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 선 위를 짧은 빛이 반복해서 내려간다 */
+.home-scroll-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  animation: scrollCue 1.9s ease-in-out infinite;
+}
+
+@keyframes scrollCue {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* ==========================================================
+   프로젝트 쇼케이스
+   ========================================================== */
+.hs-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hs-eyebrow {
+  margin: 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.hs-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
+}
+
+.hs-all {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.hs-all:hover {
+  color: var(--accent);
+}
+
+/* ===== 행 ===== */
+/* 프로젝트 7개가 화면 하나에 들어가야 해서 행을 낮게 잡는다 */
+.hs-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 28px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  isolation: isolate;
+}
+
+/* 호버 시 아래에서 차오르는 바탕 */
+.hs-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--accent-soft);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hs-row:hover::before,
+.hs-row:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.hs-index {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  transition: color 0.25s ease;
+}
+
+.hs-row:hover .hs-index {
+  color: var(--accent);
+}
+
+.hs-body {
+  min-width: 0;
+}
+
+/* 제목은 마스크 안에서 살짝 올라오며 나타난다 */
+.hs-name-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.hs-name {
+  display: block;
+  font-size: clamp(1.1rem, 2.1vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text-strong);
+  transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 0.25s ease;
+}
+
+.hs-row:hover .hs-name {
+  transform: translateX(12px);
+  color: var(--accent);
+}
+
+.hs-desc {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  /* 설명이 길어도 목록의 리듬이 흐트러지지 않게 한 줄로 자른다 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hs-row:hover .hs-desc {
+  transform: translateX(12px);
+}
+
+/* 태그는 한 줄로 유지한다. 줄바꿈을 허용하면 태그가 긴 프로젝트만
+   행 높이가 커져서 목록의 리듬이 깨진다. */
+.hs-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.hs-tag {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hs-arrow {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 0.25s ease;
+}
+
+.hs-row:hover .hs-arrow {
+  transform: translateX(6px);
+  color: var(--accent);
+}
+
+/* 데스크톱에서는 커서를 따라오는 미리보기가 대신하므로 숨긴다 */
+.hs-thumb {
+  display: none;
+}
+
+/* ===== 스크롤 등장 ===== */
+/* 구역이 스냅으로 멈춘 뒤에도 오래 움직이면 화면이 끌려오는 것처럼 보인다.
+   거리는 짧게, 시간은 스냅 이동과 비슷하게 끝나도록 잡는다. */
+.home-container [data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  /* 되돌아갈 때는 전환 없이 곧바로 처음 상태로 둔다.
+     이때는 이미 화면 밖이라 보이지 않고, 다시 들어올 때만 연출이 재생된다. */
+  transition: none;
+}
+
+.home-container [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 28ms);
+}
+
+/* 아직 나타나지 않은 행에서는 제목 마스크 연출도 함께 준비한다.
+   호버 규칙보다 셀렉터가 무거우므로, 호버 쪽도 같은 무게로 다시 적어 준다. */
+.home-container .hs-row[data-reveal] .hs-name {
+  transform: translateY(100%);
+}
+
+.home-container .hs-row[data-reveal].is-revealed .hs-name {
+  transform: translateY(0);
+}
+
+.home-container .hs-row[data-reveal].is-revealed:hover .hs-name {
+  transform: translateX(12px);
+}
+
+/* ===== 로딩 스켈레톤 행 ===== */
+.hs-row-skeleton {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.hs-skeleton-index {
+  width: 24px;
+  margin-bottom: 0;
+}
+
+.hs-skeleton-name {
+  height: 28px;
+  width: 55%;
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   커서를 따라오는 커버 미리보기 (데스크톱 전용)
+   ========================================================== */
+.hs-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* transform은 자바스크립트가 커서 위치로 계속 덮어쓴다.
+     가운데 정렬은 마진으로 처리해 transform을 건드리지 않는다. */
+  width: 320px;
+  height: 220px;
+  margin: -110px 0 0 -160px;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+.hs-preview.is-active {
+  opacity: 1;
+}
+
+.hs-preview-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+  transform: scale(0.9);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hs-preview.is-active .hs-preview-inner {
+  transform: scale(1);
+}
+
+.hs-preview-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hs-preview-item.is-shown {
+  opacity: 1;
+}
+
+/* ==========================================================
+   소개
+   ========================================================== */
+.ab-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: 48px;
+  padding-top: 36px;
+}
+
+.ab-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--image-bg);
+  display: block;
+}
+
+/* 사진을 아직 못 받았을 때도 자리가 무너지지 않게 둔다 */
+.ab-photo-empty {
+  background: var(--surface-subtle);
+}
+
+.ab-p {
+  margin: 0 0 16px;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.ab-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ab-interest {
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.ab-stats {
+  display: flex;
+  gap: 40px;
+  margin: 24px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* 숫자가 항목 이름 가운데에 오도록 (이름 길이가 제각각이라 왼쪽 정렬이면 어긋나 보인다) */
+.ab-stat {
+  margin: 0;
+  text-align: center;
+}
+
+.ab-stat dt {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.ab-stat dd {
+  margin: 6px 0 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+/* ===== 논문 / 수상 하이라이트 ===== */
+.ab-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.ab-col {
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.ab-col-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.ab-col-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.ab-col-all {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ab-col-all:hover {
+  color: var(--accent);
+}
+
+.ab-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ab-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.ab-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ab-item-title {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-strong);
+}
+
+.ab-item-meta {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================
+   마무리 (Contact)
+   ========================================================== */
+.home-contact-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
+  /* 긴 주소가 좁은 화면에서 넘치지 않게 */
+  overflow-wrap: anywhere;
+}
+
+.home-contact-mail {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 2px;
+  transition: background-size 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 0.25s ease;
+}
+
+.home-contact-mail:hover {
+  color: var(--accent);
+  background-size: 100% 2px;
+}
+
+.home-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.home-contact-link {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--text-strong);
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.home-contact-link:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ==========================================================
+   반응형
+   ========================================================== */
 @media (max-width: 900px) {
-  .home-container {
-    min-height: calc(100vh - 64px);
+  /* 스냅을 끄는 폭이라 구역을 화면 높이에 억지로 맞추지 않는다.
+     히어로만 첫 화면을 채우고, 나머지는 내용 높이대로 이어진다. */
+  .home-section {
+    min-height: 0;
+    padding: 48px 0;
+  }
+
+  .home-hero {
+    min-height: calc(100vh - var(--nav-h));
+  }
+
+  .home-section-inner {
+    padding: 0 18px;
   }
 
   .typing-text {
@@ -103,15 +660,154 @@
   .home-interest {
     margin-top: 1rem;
   }
+
+  /* 좁은 화면에서는 썸네일 + 제목만 남기고 두 줄로 접는다 */
+  .hs-row {
+    grid-template-columns: 88px 1fr;
+    grid-template-areas:
+      "thumb body"
+      "thumb tags";
+    align-items: center;
+    gap: 8px 16px;
+    padding: 18px 8px;
+  }
+
+  .hs-index,
+  .hs-arrow {
+    display: none;
+  }
+
+  .hs-body {
+    grid-area: body;
+  }
+
+  /* 좁은 화면은 폭이 모자라니 다시 줄바꿈을 허용한다 */
+  .hs-tags {
+    grid-area: tags;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .hs-thumb {
+    display: block;
+    grid-area: thumb;
+    width: 88px;
+    height: 66px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  /* 터치에서는 호버 연출이 남아 어색하므로 끈다 */
+  .home-container .hs-row[data-reveal].is-revealed:hover .hs-name {
+    transform: translateY(0);
+  }
+
+  .hs-row:hover .hs-desc {
+    transform: none;
+  }
+
+  .hs-desc {
+    font-size: 0.85rem;
+  }
+
+  /* 사진 위, 글 아래로 한 줄에 하나씩 */
+  .ab-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-top: 32px;
+  }
+
+  .ab-photo {
+    max-width: 260px;
+    aspect-ratio: 1;
+  }
+
+  .ab-stats {
+    gap: 28px;
+  }
+
+  .ab-stat dd {
+    font-size: 1.5rem;
+  }
+
+  .ab-highlights {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 44px;
+  }
+
+  .ab-col {
+    padding: 20px 20px 22px;
+  }
 }
 
+/* 화면이 낮으면 프로젝트 7행이 한 화면에 안 들어오므로 설명 줄부터 접는다 */
+@media (min-width: 901px) and (max-height: 820px) {
+  .hs-desc {
+    display: none;
+  }
+
+  .hs-row {
+    padding: 11px 16px;
+  }
+
+  .ab-grid {
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: 32px;
+    padding-top: 24px;
+  }
+
+  .ab-p {
+    margin-bottom: 12px;
+  }
+
+  .ab-stats {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+
+  .ab-stat dd {
+    font-size: 1.5rem;
+  }
+
+  .ab-item {
+    padding: 12px 0;
+  }
+}
+
+/* ==========================================================
+   모션 최소화
+   ========================================================== */
 @media (prefers-reduced-motion: reduce) {
+
   .typing-text,
-  .home-interest {
+  .home-interest,
+  .home-scroll-cue {
     animation: none;
     opacity: 1;
     width: auto;
     border-right: none;
     white-space: normal;
+  }
+
+  .home-scroll-line::after {
+    animation: none;
+  }
+
+  .home-container [data-reveal],
+  .home-container [data-reveal].is-revealed,
+  .home-container .hs-row[data-reveal] .hs-name,
+  .home-container .hs-row[data-reveal].is-revealed .hs-name,
+  .home-container .hs-row[data-reveal].is-revealed:hover .hs-name {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hs-row::before,
+  .hs-name,
+  .hs-desc,
+  .hs-arrow {
+    transition: none;
   }
 }
