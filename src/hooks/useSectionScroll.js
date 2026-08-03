@@ -1,14 +1,16 @@
 import { useLayoutEffect } from "react";
 
 /** 한 구역을 넘어가는 데 걸리는 시간 */
-const DURATION = 750;
-/** 휠이 이만큼 잠잠해져야 다음 이동을 받는다 (트랙패드 관성 꼬리를 흘려보낸다) */
-const IDLE_GAP = 160;
+const DURATION = 600;
+/** 휠이 이만큼 잠잠하면 한 동작이 끝난 것으로 본다 */
+const IDLE_GAP = 120;
+/** 이만큼 굴려야 한 구역이 넘어간다 (트랙패드로 살짝 민 것은 흘려보낸다) */
+const TRIGGER = 45;
 /** 정차 지점과 이 정도 차이는 같은 자리로 본다 */
 const TOLERANCE = 4;
 
-const easeInOutCubic = (t) =>
-  t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+/** 시작이 빠르고 끝에서 잦아든다. 미는 즉시 따라오는 느낌을 준다. */
+const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
 const prefersReducedMotion = () =>
   window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
@@ -58,7 +60,7 @@ export function animateScrollTo(targetY, { duration = DURATION, onDone } = {}) {
 
   const step = (now) => {
     const progress = Math.min(1, (now - startTime) / duration);
-    window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+    window.scrollTo(0, startY + distance * easeOutCubic(progress));
 
     if (progress < 1) {
       animationFrame = requestAnimationFrame(step);
@@ -108,21 +110,26 @@ function normalizeWheelDelta(event) {
  * mandatory 스냅은 이동 곡선을 브라우저가 정해서 뚝 끊기는 느낌이 나고,
  * 스크롤을 코드로 움직이는 다른 동작(메뉴 이동 등)과도 서로 잡아당긴다.
  *
+ * 휠과 트랙패드는 들어오는 모양이 아주 다르다. 휠은 한 칸에 큰 값(≈100)이
+ * 한 번 오지만, 트랙패드는 작은 값이 수십 번 이어지고 손을 뗀 뒤에도 관성
+ * 이벤트가 한참 더 온다. 그래서 (1) 일정량이 쌓여야 넘어가고, (2) 이동이
+ * 끝난 뒤 남은 관성은 흘려보내되 값이 다시 커지면(= 손가락을 새로 밀었다)
+ * 기다리지 않고 바로 받는다.
+ *
  * 좁은 화면과 모션 최소화 설정에서는 아무것도 하지 않고 평소 스크롤에 맡긴다.
  */
 export function useSectionScroll(selector = ".home-section") {
   useLayoutEffect(() => {
     const wide = window.matchMedia("(min-width: 901px)");
 
-    let locked = false;
-    let idleTimer = 0;
-
-    const releaseWhenIdle = () => {
-      clearTimeout(idleTimer);
-      idleTimer = window.setTimeout(() => {
-        locked = false;
-      }, IDLE_GAP);
-    };
+    /** 이동 애니메이션이 도는 중 */
+    let moving = false;
+    /** 방금 이동을 끝내고 관성 꼬리를 흘려보내는 중 */
+    let settling = false;
+    let lastWheelAt = 0;
+    let lastAbs = 0;
+    let accumulated = 0;
+    let gestureDir = 0;
 
     /** 구역들의 정차 지점. 마지막에는 푸터를 볼 수 있도록 문서 끝도 넣는다. */
     const stops = () => {
@@ -150,8 +157,16 @@ export function useSectionScroll(selector = ".home-section") {
 
       if (target === undefined) return false;
 
-      locked = true;
-      animateScrollTo(target, { onDone: releaseWhenIdle });
+      moving = true;
+      accumulated = 0;
+      animateScrollTo(target, {
+        onDone: () => {
+          moving = false;
+          // 손을 떼고 남은 관성으로 한 구역 더 넘어가지 않게 한 박자 거른다.
+          // lastAbs는 그대로 둔다. 꼬리가 얼마나 잦아들었는지 재는 기준이다.
+          settling = true;
+        },
+      });
       return true;
     };
 
@@ -169,13 +184,45 @@ export function useSectionScroll(selector = ".home-section") {
 
       event.preventDefault();
 
-      // 이동 중이거나 관성 꼬리가 남아 있으면 흘려보낸다
-      if (locked) {
-        releaseWhenIdle();
+      const now = performance.now();
+      const gap = now - lastWheelAt;
+      const abs = Math.abs(delta);
+      // 관성 꼬리는 값이 계속 작아진다. 값이 다시 커졌다면 손가락을 새로 민 것이다.
+      const pushedAgain = abs > lastAbs * 1.4 + 4;
+
+      lastWheelAt = now;
+
+      // 이동 중에는 받지 않는다. 꼬리 크기는 계속 재 둔다.
+      if (moving) {
+        lastAbs = abs;
         return;
       }
 
-      goTo(delta > 0 ? 1 : -1);
+      // 트랙패드는 손을 뗀 뒤에도 이벤트가 한참 이어진다. 잦아들 때까지 기다리면
+      // 다음에 민 동작까지 통째로 먹히므로, 잠잠해졌거나 다시 밀면 바로 받는다.
+      if (settling) {
+        if (gap > IDLE_GAP || pushedAgain) {
+          settling = false;
+          accumulated = 0;
+        } else {
+          lastAbs = abs;
+          return;
+        }
+      }
+
+      lastAbs = abs;
+
+      // 한동안 조용했거나 방향이 바뀌면 새 동작으로 보고 다시 센다
+      if (gap > IDLE_GAP || Math.sign(delta) !== gestureDir) {
+        accumulated = 0;
+        gestureDir = Math.sign(delta);
+      }
+      accumulated += delta;
+
+      // 휠 한 칸(≈100px)은 곧바로, 트랙패드는 이만큼 밀렸을 때 넘어간다
+      if (Math.abs(accumulated) < TRIGGER) return;
+
+      goTo(gestureDir);
     };
 
     const onKeyDown = (event) => {
@@ -194,9 +241,11 @@ export function useSectionScroll(selector = ".home-section") {
 
       if (event.key === "Home" || event.key === "End") {
         event.preventDefault();
-        locked = true;
+        moving = true;
         animateScrollTo(event.key === "Home" ? 0 : maxScrollY(), {
-          onDone: releaseWhenIdle,
+          onDone: () => {
+            moving = false;
+          },
         });
       }
     };
@@ -204,8 +253,10 @@ export function useSectionScroll(selector = ".home-section") {
     // 스크롤바를 끌거나 터치로 직접 움직이면 진행 중인 이동은 접는다
     const onManualScroll = () => {
       cancelScrollAnimation();
-      clearTimeout(idleTimer);
-      locked = false;
+      moving = false;
+      settling = false;
+      accumulated = 0;
+      lastAbs = 0;
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
@@ -218,7 +269,6 @@ export function useSectionScroll(selector = ".home-section") {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("pointerdown", onManualScroll);
       window.removeEventListener("touchstart", onManualScroll);
-      clearTimeout(idleTimer);
       cancelScrollAnimation();
     };
   }, [selector]);
